@@ -1,0 +1,285 @@
+\section{Radford biproduct and bosonization}
+
+\subsection{Radford biproduct}
+
+Our goal is to know when it is possible to make $A\otimes H$ a bialgebra, where
+the algebra structure is given by the smash product:
+\[
+(a\otimes h)(a'\otimes h')=a(h_{1}\to a')\otimes h_{2}h'
+\]
+for all $a,a'\in A$, $h,h'\in H$, and the coalgebra structure is
+the smash coproduct:
+\[
+\Delta(a\otimes h)=(a_{1}\otimes a_{2,-1}h_{1})\otimes(a_{2,0}\otimes h_{2})
+\]
+for all $a\in A$, $h\in H$. This is the so-called \underbar{Radford biproduct}.
+
+\begin{theorem}
+\label{theorem:radford}
+Let $H$ be Hopf algebra, and let $A$ be an algebra and a coalgebra such that
+$(A,\rightarrow)$ a left $H$-module-algebra and $(A,\delta)$ a left
+$H$-comodule-coalgebra.  Assume that 
+\begin{gather}
+A\text{ is a left \ensuremath{H}-comodule-algebra},\label{eq:radford_1}\\
+A\text{ is a left \ensuremath{H}-module-coalgebra,}\label{eq:radford_2}\\
+\varepsilon_{A}\text{ is a morphism of algebras,}\label{eq:radford_3}\\
+\Delta(1_{A})=1_{A}\otimes1_{A},\label{eq:radford_4}\\
+\Delta(aa')=a_{1}\left(a_{2,-1}\rightarrow a'_{1}\right)\otimes a_{2,0}a'_{2},\label{eq:radford_5}\\
+\left(h_{1}\rightarrow a\right)_{-1}h_{2}\otimes\left(h_{1}\rightarrow a\right)_{0}=h_{1}a_{-1}\otimes h_{2}\rightarrow a_{0}.\label{eq:radford_6}
+\end{gather}
+for all $a,a'\in A$, $h\in H$.
+Then the vector space $A\otimes H$ is a bialgebra with the algebra structure
+given by the left smash product and the coalgebra is the left smash coproduct.
+
+Furthermore, if $A$ has an antipode $S_A$, then $A\otimes H$ is a Hopf algebra
+with antipode
+\[
+S(a\otimes h)=(1\otimes S_{H}(a_{-1}h))(S_{A}(a_{0})\otimes1)
+\]
+for all $a\in A$, $h\in H$.
+\end{theorem}
+
+\begin{proof}
+We first prove that $\varepsilon$ is a morphism of algebras: 
+\begin{align*}
+\varepsilon((a\otimes h)(a'\otimes h')) & =\varepsilon(a(h_{1}\to a')\otimes h_{2}h')\\
+ & =\varepsilon(a(h_{1}\to a')\varepsilon(h_{2}h')\\
+ & =\varepsilon(a)\varepsilon(h_{1}\to a')\varepsilon(h_{2})\varepsilon(h')\\
+ & =\varepsilon(a)\varepsilon(h_{1})\varepsilon(a')\varepsilon(h_{2})\varepsilon(h')\\
+ & =\varepsilon(a)\varepsilon(h)\varepsilon(a')\varepsilon(h')\\
+ & =\varepsilon(a\otimes h)\varepsilon(a'\otimes h'),
+ \end{align*}
+and $\varepsilon(1\otimes1)=1$.  Now we prove that $\Delta$ is a morphism of
+algebras. By \eqref{eq:radford_4}, we need to prove that $\Delta$ is
+multiplicative. We compute:
+\begin{align*}
+\Delta & (a\otimes h)\Delta(a'\otimes h')\\
+ & =(a_{1}\otimes a_{2,-1}h_{1}\otimes a_{2,0}\otimes h_{2})(a'_{1}\otimes a'_{2,-1}h'_{1}\otimes a'_{2,0}\otimes h'_{2})\\
+ & =(a_{1}\otimes a_{2,-1}h_{1})(a'_{1}\otimes a'_{2,-1})\otimes(a_{2,0}\otimes h_{2})(a'_{2,0}\otimes h'_{2})\\
+ & =a_{1}((a_{2,-1}h_{1})_{1}\to a'_{1})\otimes(a_{2,-1}h_{1})_{2}a'_{2,-1}h'_{1}\otimes a_{2,0}(h_{2,1}\to a'_{2,0})\otimes h_{2,2}h'_{2}\\
+ & =a_{1}((a_{2,-1,1}h_{1,1})\to a'_{1})\otimes a_{2,-1,2}h_{1,2}a'_{2,-1}h'_{1}\otimes a_{2,0}(h_{2,1}\to a'_{2,0})\otimes h_{2,2}h'_{2}\\
+ & =a_{1}((a_{2,-1,1}h_{1})\to a'_{1})\otimes a_{2,-1,2}h_{2}a'_{2,-1}h'_{1}\otimes a_{2,0}(h_{3}\to a'_{2,0})\otimes h_{4}h'_{2}.\end{align*}
+On the other hand, we compute:
+\begin{align*}
+\Delta & ((a\otimes h)(a'\otimes h'))\\
+ & =\Delta(a(h_{1}\to a')\otimes h_{2}h')\\
+ & =(a(h_{1}\to a'))_{1}\otimes(a(h_{1}\to a'))_{2,-1}(h_{2}h')_{1}\otimes(a(h_{1}\to a'))_{2,0}\otimes(h_{2}h')_{2}\\
+ & =(a(h_{1}\to a'))_{1}\otimes(a(h_{1}\to a'))_{2,-1}h_{2}h'_{1}\otimes(a(h_{1}\to a'))_{2,0}\otimes h_{3}h'_{2}\\
+ & =a_{1}(a_{2,-1}\to(h_{1}\to a')_{1})\otimes(a_{2,0}(h_{1}\to a')_{2})_{-1}h_{2}h'_{1}\otimes(a_{2,0}(h_{1}\to a')_{2})_{0}\otimes h_{2}h'_{2}\\
+ & =a_{1}(a_{2,-1}\to(h_{1}\to a'_{1})\otimes(a_{2,0}(h_{2}\to a'_{2}))_{-1}h_{3}h'_{1}\otimes(a_{2,0}(h_{2}\to a'_{2}))_{0}\otimes h_{4}h'_{2}\\
+ & =a_{1}(a_{2,-1}h_{1}\to a'_{1})\otimes a_{2,0,-1}(h_{2}\to a'_{2})_{-1}h_{3}h'_{1}\otimes a_{2,0,0}(h_{2}\to a'_{2})_{0}\otimes h_{4}h'_{2}\\
+ & =a_{1}(a_{2,-1}h_{1}\to a'_{1})\otimes a_{2,0,-1}(h_{2}a'_{2,-1})h'_{1}\otimes a_{2,0,0}(h_{3}\to a'_{2,0})\otimes h_{4}h'_{2}\\
+ & =a_{1}(a_{2,-1,1}h_{1}\to a'_{1})\otimes a_{2,-1,2}h_{2}a'_{2,-1}h'_{1}\otimes a_{2,0}(h_{3}\to a'_{2,0})\otimes h_{4}h'_{2}.
+\end{align*}
+Since $A$ is a left $H$-comodule-coalgebra and $a_{1,-1}a_{2,-1}\otimes a_{1,0}\otimes a_{2,0}=a_{-1}\otimes a_{0,1}\otimes a_{0,2}$,
+we obtain: 
+\begin{align*}
+S((a\otimes h)_{1})(a\otimes h)_{2} & =S(a_{1}\otimes a_{2,-1}h_{1})(a_{2,0}\otimes h_{2})\\
+ & =(1\otimes S_{H}(a_{1,-1}a_{2,-1}h_{1}))(S_{A}(a_{1,0})\otimes1)(a_{2,0}\otimes h_{2})\\
+ & =S_{A}(a_{1,0})a_{2,0}\otimes S_{H}(a_{1,-1}a_{2,-1}h_{1})h_{2}\\
+ & =\varepsilon(a_{0})1\otimes S_{H}(a_{-1}h_{1})h_{2}\\
+ & =\varepsilon(a)\varepsilon(h)1\otimes1.
+\end{align*}
+Since $a_{-1}\otimes a_{0,-1}\otimes a_{0,0}=a_{-1,1}\otimes a_{-1,2}\otimes a_{0}$ we obtain:
+\begin{align*}
+(a\otimes h)_{1}S((a\otimes h)_{2}) & =(a_{1}\otimes a_{2,-1}h_{1})S(a_{2,0}\otimes h_{2})\\
+ & =(a_{1}\otimes a_{2,-1}h_{1})(1\otimes S_{H}(a_{2,0,-1}h_{2}))(S_{A}(a_{2,0,0})\otimes1)\\
+ & =a_{1}S_{A}(a_{2,0,0})\otimes a_{2,-1}h_{1}S_{H}(a_{2,0,-1}h_{2})\\
+ & =a_{1}S_{A}(a_{2,0,0})\otimes a_{2,-1}h_{1}S_{H}(h_{2})S_{H}(a_{2,0,-1})\\
+ & =a_{1}S_{A}(a_{2,0})\otimes a_{2,-1,1}S_{H}(a_{2,-1,2})\varepsilon(h)\\
+ & =a_{1}S_{A}(a_{2})\otimes1\varepsilon(h)\\
+ & =1\otimes1\varepsilon(a)\varepsilon(h).
+ \end{align*}
+This completes the proof.
+\end{proof}
+
+\begin{exercise}
+Prove that the Radford biproduct over $A\otimes H$ is commutative if and only
+if $A$ and $H$ are commutatives and the action $\to$ is trivial.  Similarly,
+the Radford biproduct over $A\otimes H$ is cocommutative if and only if $A$ and
+$H$ are cocommutative and the coaction $\delta_{A}$ is trivial.
+\end{exercise}
+
+\begin{exercise}
+Prove the converse of Theorem \ref{theorem:radford}: assume that $H$ is a
+bialgebra, $A$ is a left $H$-module-algebra and a left $H$-comodule coalgebra
+and the Radford biproduct $A\otimes H$ is a bialgebra. Then
+\eqref{eq:radford_1}--\eqref{eq:radford_6} are satisfied.
+\end{exercise}
+
+%\begin{exercise}
+%Let $(H,R)$ be a quasitriangular Hopf algebra, and let $B$ be a bialgebra in
+%the category $\H_\mathcal{M}$. Prove that $B$ is a left $H$-comodule-algebra via
+%$\delta(b)=R^{-1}(1\otimes b)$ and $B\otimes H$ with the Radford biproduct is a
+%bialgebra.  Furthermore, if $B$ is a triangular algebra then the biproduct is
+%quasitriangular.
+%\end{exercise}
+
+\begin{remark}
+Similarly, it is possible to put on $H\otimes B$ a bialgebra structure, where
+the algebra structure is given by the smash product over $H\otimes B$ and the
+coalgebra is given by the smash coproduct over $H\otimes B$. For that purpose
+we need $B$ to be a right $H$-module-algebra and a right
+$H$-comodule-coalgebra. In this case, the necessary and sufficient conditions
+are:
+\begin{gather*}
+B\text{ is a right \ensuremath{H}-comodule-algebra,}\\
+B\text{ a right \ensuremath{H}-module-coalgebra,}\\
+\varepsilon_{B}\text{ is a morphism of algebras,}\\
+\Delta(1_{B})=1_{B}\otimes1_{B},\\
+\Delta(bb')=b_{1}b'_{1,0}\otimes(b_{2}\leftarrow b'_{1,1})b'_{2},\\
+(b_{0}\leftarrow h_{1})\otimes b_{1}h_{2}=(b\leftarrow h_{2})_{0}\otimes h_{1}(b\leftarrow h_{2})_{1}.\end{gather*}
+\end{remark}
+
+\begin{remark}
+A different and important bialgebra structure on $A\otimes H$ is
+the so-called \underline{Majid product}. Let $A$ be an left $H$-module-algebra
+and $H$ be a right $A$-comodule-coalgebra. On the vector space $A\otimes H$
+we consider the algebra structure given by the smash product on $A\otimes H$ and the coalgebra
+structure given on $A\otimes H$, i.e.,
+\begin{align*}
+(a\otimes h)(a'\otimes h') & =a(h_{1}\rightarrow a')\otimes h_{2}h',\\
+\Delta(a\otimes h) & =a_{1}\otimes h_{1,0}\otimes a_{2}h_{1,1}\otimes h_{2}.\end{align*}
+Then $A\otimes H$ is a bialgebra if and only if \begin{gather*}
+\varepsilon(h\rightarrow a)=\varepsilon_{H}(h)\varepsilon_{A}(a),\\
+\Delta(h\rightarrow a)=h_{1,0}\rightarrow a_{1}\otimes h_{1,1}(h_{2}\rightarrow a_{2}),\\
+\delta(1)=1\otimes1,\\
+\delta(hh')=h_{1,0}h'_{0}\otimes h_{1,1}(h_{2}\rightarrow h'_{1}),\\
+h_{2,0}\otimes(h_{1}\rightarrow a)h_{2,1}=h_{1,0}\otimes h_{1,1}(h_{2}\rightarrow a).
+\end{gather*}
+\end{remark}
+
+\subsection{Bosonization}
+
+\begin{theorem}
+\label{theorem:bosonization}
+Let $H$ be a Hopf algebra with bijective antipode. There exists a bijective
+correspondence between
+\begin{enumerate}
+\item Hopf algebras $A$ with morphisms $H\xrightarrow{i}A\xrightarrow{p}H$
+such that $pi=\textrm{id}_{H}$.
+\item Hopf algebras in the category $_{H}^{H}\mathcal{YD}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Assume (1). We claim that 
+\[
+R=A^{\textrm{co}H}=\{a\in A\mid(\textrm{id}\otimes p)\Delta(a)=a\otimes1\}
+\]
+is a Hopf algebra in the category of left Yetter-Drinfeld modules.
+It is clear that $R$ is a subalgebra of $A$. Now define
+\begin{align*}
+\Delta_{R}(r) & =r_{1}iSp(r_{2})\otimes r_{3},\\
+S_{R}(r) & =ip(r_{1})S(r_{2}),\\
+h\to r & =i(h_{1})riS(h_{2}),\\
+\delta(r) & =(p\otimes\textrm{id})\Delta(r),
+\end{align*}
+for all $r\in R$ and $h\in H$. 
+We write $\Delta_{R}(r)=r^{1}\otimes r^{2}$ to distinguish $\Delta_{R}(r)$
+and $\Delta_{A}(r)=r_{1}\otimes r_{2}$. We claim that $\Delta_{R}$
+is coassociative:
+\begin{align*}
+(\textrm{id}\otimes\Delta_{R})\Delta_{R}(r) & =(\textrm{id}\otimes\Delta_{R})(r_{1}iSp(r_{2})\otimes r_{3})\\
+ & =r_{1}iSp(r_{2})\otimes r_{3,1}iSp(r_{3,2})\otimes r_{3,3}\\
+ & =r_{1}iSp(r_{2})\otimes r_{3}iSp(r_{4})\otimes r_{5}.
+ \end{align*}
+On the other hand:
+\begin{align*}
+(\Delta_{R}\otimes\textrm{id})\Delta_{R}(r) & =(\Delta_{R}\otimes\textrm{id})(r_{1}iSp(r_{2})\otimes r_{3})\\
+ & =\Delta_{R}(r_{1}iSp(r_{2}))\otimes r_{3}\\
+ & =[r_{1}iSp(r_{2})]_{1}iSp([r_{1}iSp(r_{2})]_{2})\otimes[r_{1}iSp(r_{2})]_{3}\otimes r_{3}\\
+ & =r_{1,1}[iSp(r_{2})]_{1}iSp(r_{1,2}[iS_{H}p(r_{2})]_{2})\otimes r_{1,3}[iSp(r_{2})]_{3}\otimes r_{3}\\
+ & =r_{1}iSp(r_{6})iSp(r_{2}iSp(r_{5}))\otimes r_{3}iSp(r_{4})\otimes r_{7}\\
+ & =r_{1}iS[p(r_{2})Sp(r_{5})r_{6}]\otimes r_{3}iSp(r_{4})\otimes r_{7}\\
+ & =r_{1}iSp(r_{2})\otimes r_{3}iSp(r_{4})\otimes r_{5}.\end{align*}
+Hence $R$ is an algebra and a coalgebra. 
+
+We claim that $R$ is a left $H$-comodule-algebra, since \[
+\delta(1)=(p\otimes\textrm{id})\Delta(1)=p(1)\otimes1=1\otimes1,\]
+and \[
+\delta(rr')=p(r_{1}r_{1}')\otimes r_{2}r'_{2}=p(r_{1})p(r'_{1})\otimes r_{2}r'_{2}=r_{-1}r'_{-1}\otimes r_{0}r'_{0}.\]
+
+We claim that $R$ if a left $H$-comodule-coalgebra, since \[
+r_{-1}\varepsilon(r_{0})=p(r_{1})\varepsilon(r_{2})=p(r_{1}\varepsilon(r_{2}))=p(r)\]
+and since $r\in R$, \[
+\varepsilon(r)=(\varepsilon\otimes\textrm{id})(r\otimes1)=(\varepsilon\otimes\textrm{id})(\textrm{id}\otimes p)\Delta(r)=\varepsilon(r_{1})p(r_{2})=p(r).\]
+Futhermore, \begin{align*}
+(r^{1})_{-1}(r^{2})_{-1}\otimes(r^{1})_{0}\otimes(r^{2})_{0} & =p[(r_{1}iSpr_{2})_{1}r_{3,1}]\otimes(r_{1}iSp(r_{2}))_{2}\otimes r_{3,2}\\
+ & =p[r_{1,1}i(Spr_{2})_{1}r_{3,1}]\otimes r_{1,2}i(Spr_{2})_{2}\otimes r_{3,2}\\
+ & =p(r_{1}iSpr_{4}r_{5})\otimes r_{2}iSp(r_{3})\otimes r_{6}\\
+ & =p(r_{1})\otimes r_{2}iSpr_{3}\otimes r_{4}.\end{align*}
+and on the other hand,\begin{align*}
+r_{-1}\otimes(r_{0})^{1}\otimes(r_{0})^{2} & =r_{-1}\otimes\Delta_{R}(r_{0})\\
+ & =p(r_{1})\otimes\Delta_{R}(r_{2})\\
+ & =p(r_{1})\otimes r_{2}iSp(r_{3})\otimes r_{4}.
+\end{align*}
+We claim that $R$ is a left $H$-module-algebra, since 
+\[
+h\to1=ih_{1}iSh_{2}=i(h_{1}Sh_{2})=\varepsilon(h)i(1)=\varepsilon(h)1
+\]
+and 
+\begin{align*}
+(h_{1}\to r)(h_{2}\to r') & =ih_{1,1}riSh_{1,2}ih_{2,1}r'iSh_{2,2}\\
+ & =ih_{1}riSh_{2}ih_{3}r'iSh_{4}\\
+ & =ih_{1}r\varepsilon(h_{2})r'iSh_{3}\\
+ & =ih_{1}rr'iSh_{2}\\
+ & =h\to(rr').
+\end{align*}
+We claim that $R$ is a left $H$-module-coalgebra, since \[
+\varepsilon(h\to r)=\varepsilon(ih_{1}aiSh_{2})=\varepsilon(ih_{1})\varepsilon(r)\varepsilon(iSh_{2})=\varepsilon(h)\varepsilon(r)\]
+and \begin{align*}
+\Delta_{R}(h\to r) & =\Delta_{R}(ih_{1}riSh_{2})\\
+ & =[ih_{1}riSh_{2}]_{1}iSp([ih_{1}riSh_{2}]_{2})\otimes[ih_{1}riSh_{2}]_{3}\\
+ & =ih_{1,1}r_{1}iS(h_{2})_{2}iSp(ih_{1,2}r_{2}iS(h_{2})_{2}\otimes ih_{1,3}r_{3}iS(h_{2})_{3}\\
+ & =ih_{1}r_{1}iSh_{6}iSp[ih_{2}r_{2}iSh_{5}]\otimes ih_{3}r_{3}iSh_{4}\\
+ & =ih_{1}r_{1}iSh_{6}iS[h_{2}pr_{2}Sh_{5}]\otimes ih_{3}r_{3}iSh_{4}\\
+ & =ih_{1}r_{1}iS[h_{2}pr_{2}Sh_{5}h_{6}]\otimes ih_{3}r_{3}iSh_{4}\\
+ & =ih_{1}r_{1}iS(h_{2}pr_{2})\varepsilon(h_{5})\otimes ih_{3}r_{3}iSh_{4}\\
+ & =ih_{1}r_{1}iSpr_{2}Sh_{2}\otimes ih_{3}r_{3}iSh_{4}\end{align*}
+and 
+\begin{align*}
+h_{1}\to r^{1}\otimes h_{2}\to r^{2} & = h_{1}\to r_{1}iSpr_{2}\otimes h_{2}\to r_{3}\\
+ & = ih_{1,1}r_{1}iSpr_{2}iSh_{1,2}\otimes ih_{2,1}r_{3}iSh_{2,2}\\
+ & = ih_{1}r_{1}iSpr_{2}iSh_{2}\otimes ih_{3}r_{3}iSh_{4}
+\end{align*}
+To prove that $R$ is a bialgebra in $_{H}^{H}\mathcal{YD}$ it remains
+to prove that $\Delta_{R}$ is a morphism in $_{H}^{H}\mathcal{YD}$.
+We compute: 
+\begin{align*}
+\Delta_{R}(rr') & = (rr')_{1}iSp((rr')_{2})\otimes(rr')_{3}\\
+ & = r_{1}r'_{1}iSp(r_{2}r'_{2})\otimes r_{3}r'_{3}\\
+ & = r_{1}r'_{1}iSp(r'_{2})iSp(r_{2})\otimes r_{3}r'_{3}.
+\end{align*}
+On the other hand,
+\begin{align*}
+r^{1}((r^{2})_{-1}\to r'^{1})\otimes(r^{2})_{0}r'^{2} &=r_{1}iSp(r_{2})(r_{3,-1}\to(r'_{1}iSp(r'_{2}))\otimes r_{3,0}r'_{3}\\
+ &=r_{1}iSp(r_{2})(p(r_{3,1})\to r'_{1}iSp(r'_{2}))\otimes r_{3,2}r'_{3}\\
+ &=r_{1}iSp(r_{2})i(p(r_{3})_{1})r'_{1}iSp(r'_{2})iS(p(r_{2})_{2})\otimes r_{4}r'_{3}\\
+ &=r_{1}i[Sp(r_{2})p(r_{3})]r'_{1}iS[p(r'_{2})iSp(r_{4})]\otimes r_{5}r'_{3}\\
+ &=r_{1}\varepsilon(r_{2})r'_{1}iSp(r'_{2})iSp(r_{3})\otimes r_{4}r'_{3}\\
+ &=r_{1}r'_{1}iSp(r'_{2})iSp(r_{2})\otimes r_{3}r'_{3}.
+\end{align*}
+
+Conversely, let $R$ be a Hopf algebra in the category of Yetter-Drinfeld
+modules. Then the Radford biproduct $R\otimes H$ is a Hopf algebra by Theorem
+\ref{theorem:radford}. The maps $p:R\otimes H\to H$, defined by $r\otimes
+h\mapsto\varepsilon(r)h$, and $i:H\to R\otimes H$, defined by $h\mapsto
+1\otimes h$ are Hopf algebra morphisms and $p\circ i=\id$. 
+%Furthermore,
+%\[
+%R\otimes1=\{a\in R\otimes H\mid (\id\otimes p)\Delta(a)=a\otimes1\}.
+%\]
+%Now the claim follows from the following exercise.
+\end{proof}
+
+\begin{exercise}
+Let $A$ and $H$ be two Hopf algebras such that there exist Hopf algebras
+morphisms $H\xrightarrow{i}A\xrightarrow{p}H$ such that $pi=\id_H$. Let
+$R=A^{\mathrm{co}H}$ and consider the map $\omega:A\to R$ defined by $a\mapsto
+a_1ip(Sa_2)$. Prove that the maps $\alpha:A\to R\otimes H$,
+$\alpha(a)=\omega(a_1)\otimes p(a_2)$ and $\beta:R\otimes H\to A$, $r\otimes
+h\mapsto ri(h)$, are Hopf algebra morphisms. Furthermore, prove that
+$\alpha\circ\beta=\id_{R\otimes H}$ and $\beta\circ\alpha=\id_A$. Conclude
+that $A\simeq R\otimes H$ as Hopf algebras.
+\end{exercise}

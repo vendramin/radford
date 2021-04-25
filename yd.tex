@@ -1,0 +1,328 @@
+\section{Yetter-Drinfeld modules}
+
+\begin{definition}
+\index{Yetter-Drinfeld module}
+Let $H$ be a Hopf algebra. A \underline{Yetter-Drifeld module} over $H$ is a
+triple $(V,\rightarrow,\delta)$, where $(V,\rightarrow)$ is a left $H$-module,
+$(V,\delta)$ is a left $H$-comodule, and such that 
+\begin{equation}
+\delta(h\rightarrow v)=h_{1}v_{-1}Sh_{3}\otimes h_{2}\rightarrow v_{0}\label{eq:YD}
+\end{equation}
+for all $h\in H$, $v\in V$. A \underline{morphism} of Yetter-Drinfeld modules
+is a morphism of left $H$-modules and left $H$-comodules. The category of Yetter-Drinfeld
+modules will be denoted by $\ydH$.
+\end{definition}
+
+\begin{example}
+Let $H$ be a Hopf algebra with the trivial action and coaction on itself:
+$h\rightarrow x=\varepsilon(h)x$ and $\delta(h)=1\otimes h$ for all $h,x\in H$.
+Then $(H,\rightarrow,\delta)$ is a Yetter-Drinfeld module over $H$.
+\end{example}
+
+\begin{example}
+Let $H$ be a Hopf algebra. Then $(H,\mathrm{adj},\Delta)$ and
+$(H,m,\mathrm{coadj})$ are Yetter-Drinfeld modules over $H$.
+\end{example}
+
+\begin{exercise}
+\label{exercise:YD_condition}
+Prove that the condition \eqref{eq:YD} is equivalent to
+\begin{equation}
+\label{eq:left_left_YD_equivalent}
+h_{1}v_{-1}\otimes(h_{2}\rightarrow v_{0})=(h_{1}\rightarrow v)_{-1}h_{2}\otimes(h_{1}\rightarrow v)_{0}
+\end{equation}
+for all $h\in H$, $v\in V$.
+\end{exercise}
+
+\begin{exercise}
+Let $G$ be a group, and $H$ be the group Hopf algebra of $G$. Assume that
+$(V,\rightarrow)$ is a left $H$-module, and $(V,\delta)$ is a left
+$H$-comodule. 
+\begin{enumerate}
+\item Prove that $V=\oplus_{g\in G}V_{g}$, where $V_{g}=\{v\in V\mid\delta(v)=g\otimes v\}$.  
+\item Prove that the triple $(V,\rightarrow,\delta)$ is a Yetter-Drinfeld
+module if and only if $h\rightarrow V_{g}\subseteq V_{hgh^{-1}}$ for all
+$g,h\in H$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}\label{exercise:YD_tensor}
+Let $V$ and $W$ be two Yetter-Drinfeld modules over $H$. Then $V\otimes W$ is a
+Yetter-Drinfeld over $H$, where 
+\begin{align*}
+h\rightarrow(v\otimes w) & =(h_{1}\rightarrow v)\otimes(h_{2}\rightarrow w),\\
+\delta(v\otimes w) & =v_{-1}w_{-1}\otimes(v_{0}\otimes w_{0})
+\end{align*}
+for all $h\in H$, $v\in V$, $w\in W$.
+\end{exercise}
+
+Let $H$ be a Hopf algebra with invertible antipode. For any pair $V$ and $W$ of
+Yetter-Drinfeld modules over $H$, we consider the map 
+\begin{align*}
+c_{V,W}:V\otimes W&\to W\otimes V\\
+v\otimes w&\mapsto (v_{-1}\rightarrow w)\otimes v_{0}.
+\end{align*}
+
+\begin{lemma}
+The map $c_{V,W}$ is an isomorphism in $\ydH$.
+\end{lemma}
+
+\begin{proof}
+The map $c$ is invertible and the inverse is 
+\begin{align*}
+c_{V,W}^{-1}:W\otimes V & \to V\otimes W\\
+w\otimes v & \mapsto v_{0}\otimes(S^{-1}(v_{-1})\to w)
+\end{align*}
+since
+\begin{align*}
+c_{V,W}^{-1}c_{V,W}(v\otimes w) & =c_{V,W}^{-1}((v_{-1}\to w)\otimes v_{0})\\
+ & =v_{0,0}\otimes(S^{-1}(v_{0,-1})\to(v_{-1}\to w))\\
+ & =v_{0,0}\otimes(S^{-1}(v_{0,-1})v_{-1}\to w)\\
+ & =v_{0}\otimes(S^{-1}(v_{-1})v_{-2}\to w)\\
+ & =v_{0}\otimes(\varepsilon(v_{-1})1\to w)\\
+ & =v\otimes w,
+\end{align*}
+and similarly $c_{V,W}c_{V,W}^{-1}(w\otimes v)=w\otimes v$. 
+
+Now we prove that $c_{V,W}$ is a morphism of $H$-modules: 
+\begin{align*}
+c_{V,W}(h\rightarrow (v\otimes w))&=c_{V,W}(h_1\rightarrow v\otimes h_2\rightarrow w)\\
+&=(h_1\rightarrow v)_{-1}\rightarrow(h_2\rightarrow w)\otimes(h_1\rightarrow v)_0\\
+&=(h_{11}v_{-1}Sh_{13})\rightarrow(h_2\rightarrow w)\otimes h_{12}\rightarrow v_0\\
+&=(h_1v_{-1}(Sh_3)h_4)\rightarrow w\otimes h_2\rightarrow v_0\\
+&=(h_1v_{-1})\rightarrow w\otimes h_2\rightarrow v_0\\
+&=h_1\rightarrow(v_{-1}\rightarrow w)\otimes h_2\rightarrow v_0\\
+&=h\rightarrow((v_{-1}\rightarrow w)\otimes v_0).
+\end{align*}
+
+To prove that $c_{V,W}$ is a morphism of comodules we need $(\id\otimes
+c)\delta=\delta c$.  We compute:
+\[
+(\id\otimes c)\delta(v\otimes w)=v_{-1}w_{-1}\otimes (v_{0,-1}\rightarrow w_0)\otimes v_{0,0}.
+\]
+On the other hand,
+\begin{align*}
+\delta(c(v\otimes w)&=\delta(v_{-1}\rightarrow w\otimes v_0)\\
+&=(v_{-1}\rightarrow w)_{-1}v_{0,-1}\otimes(v_{-1}\rightarrow w)_0\otimes v_{0,0}\\
+&=(v_{-2}\rightarrow w)_{-1}v_{-1}\otimes (v_{-2}\rightarrow w)_0\otimes v_0\\
+&=v_{-2,1}w_{-1}S(v_{-2,3})v_{-1}\otimes(v_{-2,2}\rightarrow w_0)\otimes v_0\\
+&=v_{-4}w_{-1}S(v_{-2})v_{-1}\otimes (v_{-3}\rightarrow w_0)\otimes v_0\\
+&=v_{-2}w_{-1}\otimes(v_{-1}\rightarrow w_0)\otimes v_0.
+\end{align*}
+This completes the proof.
+\end{proof}
+
+\begin{exercise}
+\label{exercise:YD_hexagons}
+Let $H$ be a Hopf algebra, and let $U$, $V$ and $W$
+be three objects of $_H^H\mathcal{YD}$. Prove that 
+\begin{align}
+c_{U\otimes V,W} & =(c_{U,W}\otimes\id_{V})(\id_{U}\otimes c_{V,W}),\label{eq:(cx1)(1xc)}\\
+c_{U,V\otimes W} & =(\id_{V}\otimes c_{U,W})(c_{U,V}\otimes\id_{W}).\label{eq:(1xc)(cx1)}
+\end{align}
+\end{exercise}
+
+\begin{exercise}
+\label{exercise:YD_naturality}
+Let $H$ be a Hopf algebra. Prove that 
+\[
+c_{V',W'}(f\otimes g)=(g\otimes f)c_{W,V}
+\]
+for all Yetter-Drinfeld modules morphisms $f:V\to V'$ and $g:W\to W'$. 
+\end{exercise}
+
+\begin{theorem}
+\label{theorem:YD_braid_equation}
+Let $H$ be a Hopf algebra with invertible antipode, and let $U,V,W$
+be Yetter-Drinfeld modules over $H$. Then 
+%\begin{align*}
+%c_{V,W}:V\otimes W&\to W\otimes V\\
+%v\otimes w&\mapsto (v_{-1}\rightarrow w)\otimes v_{0},
+%\end{align*}
+%is an isomorphism in $_{H}^{H}\mathcal{YD}$ and it is a solution of the braid
+%equation:
+\begin{align*}
+(c_{V,W}\otimes\textrm{id}_{U})(\textrm{id}_{V}&\otimes c_{U,W})(c_{U,V}\otimes\textrm{id}_{W})\\
+&=(\textrm{id}_{W}\otimes c_{U,V})(c_{U,W}\otimes\textrm{id}_{V})(\textrm{id}_{U}\otimes c_{V,W}).
+\end{align*}
+\end{theorem}
+
+\begin{proof}
+It follows from Exercise \eqref{exercise:YD_naturality} with
+$f=c_{U,V}\otimes\id_W$ and $g=\id_W$, and Exercise
+\eqref{exercise:YD_hexagons}.
+\end{proof}
+
+\begin{exercise}
+Prove Theorem \ref{theorem:YD_braid_equation} without using Exercises
+\ref{exercise:YD_naturality} and \ref{exercise:YD_hexagons}.
+\end{exercise}
+
+%It remains
+%to prove that $c$ is natural, i.e., 
+%\[
+%(g\otimes f)c_{V,W}=c_{V',W'}(f\otimes g).
+%\]
+%So let $V$, $V'$, $W$ and $W'$ be objects of $_{H}^{H}\mathcal{YD}$,
+%and $f\in\hom(V,V')$, $g\in\hom(W,W')$. We compute 
+%\begin{align*}
+%(g\otimes f)c_{V,W}(v\otimes w) & =(g\otimes f)(v_{-1}\to w\otimes v_{0})\\
+% & =g(v_{-1}\to w)\otimes f(v_{0})\\
+% & =v_{-1}\to g(w)\otimes f(v_{0})
+%\end{align*}
+%and
+%\begin{align*}
+%c_{V',W'}(f\otimes g)(v\otimes w) & =f(v)\otimes g(w)\\
+% & =f(v)_{-1}\to g(w)\otimes f(v)_{0}\\
+% & =v_{-1}\to g(w)\otimes f(v_{0})
+%\end{align*}
+%(here we use that $f$ is morphism of $H$-comodules). Hence the claim
+%holds.
+
+\subsection{The category $_H\mathcal{YD}^H$}
+
+We will also work with the following variation of what a Yetter-Drinfeld module
+is: An object $V$ in the category $_{H}\mathcal{YD}^{H}$ is a triple
+$(V,\rightarrow,\delta)$, where $(V,\rightarrow)$ is a left $H$-module,
+$(V,\delta)$ is a right $H$-comodule, such that
+\[
+h_{1}\rightarrow v_{0}\otimes h_{2}v_{1}=(h_{2}\rightarrow v)_{0}\otimes(h_{2}\rightarrow v)_{1}h_{1},
+\]
+or equivalently
+\[
+\delta(h\rightarrow v)=h_{2}\rightarrow v_{0}\otimes h_{3}v_{1}S^{-1}h_{1},
+\]
+for all $v\in V$, $h\in H$. 
+%\end{rem}
+
+%\begin{exercise}
+%Let $H$ be a Hopf algebra with bijective antipode. Prove that the categories
+%$_{H}^{H}\mathcal{YD}$ and $_{H}\mathcal{YD}^{H}$ are equivalent.
+%\end{exercise}
+%
+%\begin{solution}
+%Let $(V,\rightarrow,\delta)$ be an object of $_{H}^{H}\mathcal{YD}$, where we
+%write $\delta(v)=v_{-1}\otimes v_{0}$. Let $\rho:V\to V\otimes H$ be the linear
+%map defined by $\rho(v)=Sv_{1}\otimes v_{0}$. Then $(V,\rightarrow,\rho)$ is an
+%object of $_{H}\mathcal{YD}^{H}$. The converse is similar. 
+%\end{solution}
+
+\begin{exercise}
+Let $H$ be a finite-dimensional Hopf algebra with bijective antipode.  Assume that
+$(V,\rightarrow,\delta_R)$ is an object of $_{H}\mathcal{YD}^{H}$ and define
+\[
+\delta_L(v)=S(v_1)\otimes v_0
+\]
+for all $v\in V$.  Prove that
+$(V,\rightarrow,\delta_L)$ is an object of $_H^H\mathcal{YD}$. 
+Conversely, if $(V,\rightarrow,\delta_L)$ is an object of $_H^H\mathcal{YD}$,
+define \[
+\delta_R(v)=v_0\otimes S^{-1}v_{-1}
+\]
+for all $v\in V$. Prove that
+$(V,\rightarrow,\delta_R)$ is an object of $_H\mathcal{YD}^H$.
+\end{exercise}
+
+\subsection{Yetter-Drinfeld modules and the Drinfeld double}
+
+\begin{exercise}
+Let $H$ be a finite-dimensional Hopf algebra. Assume that $\{h_i\}$ is a basis
+of $H$, and let $\{h^i\}$ be its dual basis.  Prove that the element
+\[
+\sum h^i\otimes h_i
+\]
+does not depend on the pair of dual basis $\{h_i\}$ and $\{h^i\}$.
+\end{exercise}
+
+\begin{lemma}
+\label{lem:DH_compatibility}
+Let $H$ be a finite-dimensional Hopf algebra. Then  $V$ is a left
+$\mathcal{D}(H)$-module if and only if $V$ is a left $H$-module, a left
+$H^{*}$-module and 
+\begin{eqnarray}
+h\cdot(f\cdot v) & = & f(S^{-1}(h_{3})?h_{1})\cdot(h_{2}\cdot v)\label{eq:compatibility_D(H)}
+\end{eqnarray}
+for all $h\in H$, $f\in H^{*}$.
+\end{lemma}
+
+\begin{proof}
+We compute 
+\begin{align*}
+(1\otimes h)\cdot((f\otimes1)\cdot v) & =((1\otimes h)(f\otimes1))\cdot v\\
+ & =(f(S^{-1}(h_{3})?h_{1})\otimes h_{2})\cdot v\\
+ & =(f(S^{-1}(h_{3})?h_{1})\otimes1)(1\otimes h_{2}))\cdot v\\
+ & =f(S^{-1}(h_{3})?h_{1})\cdot(h_{2}\cdot v).
+\end{align*}
+and the claim follows. 
+\end{proof}
+
+\begin{lemma}
+\label{lem:DH_to_YD}
+Let $H$ be a finite-dimensional Hopf algebra and assume that $\{h_i\}$ is a basis
+of $H$, and let $\{h^i\}$ be its dual basis.  
+Let $(V,\cdot)$ be a left $\mathcal{D}(H)$-module. For any $v\in V$ define 
+\[
+\delta(v)=\sum h^i\cdot v\otimes h_i.
+\]
+Then the triple $(V,\cdot,\delta)$ is an object of $_H\mathcal{YD}^H$.
+\end{lemma}
+
+\begin{proof}
+We prove the compatibility condition
+\begin{equation}
+\label{eq:DH_to_YD}
+\sum h^i\cdot (v\cdot v)\otimes h_i=\sum x_2\cdot(h^i\cdot v)\otimes x_3h_iS^{-1}x_1
+\end{equation}
+for all $x\in H$, $v\in V$. Let $f\in H^*$ and apply $(\id\otimes f)$ to the
+left hand side of \eqref{eq:DH_to_YD} to obtain
+\[
+\sum h^i\cdot (x\cdot v)f(h_i)=f\cdot (x\cdot v).
+\]
+On the other hand, applying $(\id\otimes f)$ to the right hand side of
+\eqref{eq:DH_to_YD} we obtain
+\begin{align*}
+%(\id\otimes f)&\left(\sum x_2\cdot (h^i\cdot v)\otimes x_3h_1S^{-1}x_1\right)\\
+\sum x_2\cdot(h^i\cdot v) f(x_3h_iS^{-1}x_1)&=
+x_2\cdot\left( f(x_3?S^{-1}x_1)\cdot v\right)\\
+&=f(x_3S^{-1}x_{23}?x_{21}S^{-1}x_1)\cdot (x_{22}\cdot v)\\
+&=f(x_5S^{-1}x_4?x_2S^{-1}x_1)\cdot(x_3\cdot v)\\
+&=f\cdot (x\cdot v)
+\end{align*}
+and the claim follows.
+\end{proof}
+
+\begin{lemma}
+\label{lem:YD_to_DH}
+Let $H$ be a finite-dimensional Hopf algebra. Let 
+$(V,\cdot,\delta)$ be an object of $_H\mathcal{YD}^H$. Then $V$ is a left
+$\mathcal{D}(H)$-module via 
+\[
+(f\otimes h)\cdot v=\langle f\mid (h\cdot v)_1\rangle (h\cdot v)_0
+\]
+for all $f\in H^*$, $h\in H$ and $v\in V$.
+\end{lemma}
+
+\begin{proof}
+By Lemma \ref{lem:DH_compatibility}, we need prove that
+\[
+h \cdot(f\cdot v)=\langle f\mid v_1\rangle(h\cdot v_0)
+\]
+for all $f\in H^*$, $h\in H$, $v\in V$. We compute:
+\begin{align*}
+f(S^{-1}h_3?h_1)\cdot(h_2\cdot v)&=\langle f\mid S^{-1}h_3(h_2\cdot v)_1h_1\rangle(h_2\cdot v)_0\\
+&=\langle f\mid S^{-1}h_3(h_{23}v_1S^{-1}h_{21})h_1\rangle(h_{22}\cdot v_0)\\
+&=\langle f\mid S^{-1}h_5h_4v_1S^{-1}h_2h_1\rangle h_3\cdot v_0\\
+&=\langle f\mid v_1\rangle (h\cdot v_0)
+\end{align*}
+and the claim follows.
+\end{proof}
+
+\begin{theorem}
+The categories $_H\mathcal{YD}^H$ and $_{\mathcal{D}(H)}\mathcal{M}$ are
+equivalent.
+\end{theorem}
+
+\begin{proof}
+It follows from Lemmas \ref{lem:DH_to_YD} and \ref{lem:YD_to_DH}.
+\end{proof}
+

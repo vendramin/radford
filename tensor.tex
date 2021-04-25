@@ -1,0 +1,401 @@
+\section{Tensor categories}
+
+\begin{definition}
+\index{monoidal category}
+A \underline{monoidal category} is a tuple
+$(\mathcal{C},\otimes,a,\mathbb{I},l,r)$, where $\mathcal{C}$ is a category,
+$\otimes:\mathcal{C}\times\mathcal{C}\to\mathcal{C}$ is a funtor, $\mathbb{I}$
+is an object of $\mathcal{C}$, $a_{U,V,W}:(U\otimes V)\otimes W\to
+U\otimes(V\otimes W)$ is a natural isomorphism such that 
+\begin{equation}
+(\id_{U}\otimes a_{V,W,X})a_{U,V\otimes W,X}(a_{U,V,W}\otimes\id_{X})=a_{U,V,W\otimes X}a_{U\otimes V,W,X}\label{eq:pentagon}
+\end{equation}
+for all objects $U$,$V$, $W$ of $\mathcal{C}$ and $r_{U}:U\otimes\mathbb{I}\to U$
+and $l_{U}:\mathbb{I}\otimes U\to U$ are natural isomorphism such
+that 
+\begin{equation}
+(\id_{V}\otimes l_{W})a_{V,I,W}=r_{V}\otimes\id_{W}\label{eq:triangles}
+\end{equation}
+for all objects $U,W$ of $\mathcal{C}$.
+\end{definition}
+
+\begin{definition}
+\index{strict monoidal category}
+A monoidal category $\mathcal{C}$ is called \underline{strict} if the natural
+isomorphism $a$, $l$ y $r$ are identities. 
+\end{definition}
+
+\begin{theorem}
+Every monoidal category $\mathcal{C}$ is equivalent to a strict monoidal
+category.
+\end{theorem}
+
+\begin{proof}
+See for example \cite[Theorem XI.5.3]{MR1321145}.
+\end{proof}
+
+\begin{example}
+\index{tensor product!of $H$-modules}
+Let $H$ be a Hopf algebra. The category of left $H$-modules is a monoidal
+category.  Recall that if $V$ and $W$ are two left $H$-modules, the tensor
+product of $V$ and $W$ is defined by 
+\[
+h\rightarrow(v\otimes w)=(h_{1}\rightarrow v)\otimes(h_{2}\rightarrow w)
+\]
+for all $h\in H$, $v\in V$, $w\in W$. 
+\end{example}
+
+\begin{example}
+\index{tensor product!of $H$-comodules}
+Let $H$ be a Hopf algebra. The category of left $H$-comodules is a monoidal
+category.  Recall that if $V$ and $W$ are two left $H$-comodules, the tensor
+product of $V$ and $W$ is defined defined by 
+\[
+\delta(v\otimes w)=v_{-1}w_{-1}\otimes(v_0\otimes w_0)
+\]
+for all $v\in V$, $w\in W$.
+\end{example}
+
+\begin{example}
+\index{tensor product!of Yetter-Drinfeld modules}
+Let $H$ be a Hopf algebra with invertible antipode. The category
+$_H\mathcal{YD}^H$ of Yetter-Drinfeld modules is a monoidal category. 
+\end{example}
+
+%\subsection{Braided categories}
+
+\begin{definition}
+\index{braided monoidal category}
+A monoidal category $\mathcal{C}$ is \underline{braided} if there
+exists a natural isomorphism $c:\otimes\to\otimes^{\mathrm{op}}$
+such that
+\begin{align}
+c_{U,V\otimes W} & =(\id_{V}\otimes c_{U,W})(c_{U,V}\otimes\id_{W}),\label{eq:braided1}\\
+c_{U\otimes V,W} & =(c_{U,W}\otimes\id_{V})(\id_{U}\otimes c_{V,W})\label{eq:braided2}
+\end{align}
+for all objects $U,V,W$ of $\mathcal{C}$. 
+\end{definition}
+
+\begin{definition}
+\index{symmetric monoidal category}
+A braided monoidal category is \underline{symmetric} if $c$ satisfies
+\[
+c_{U,V}c_{V,U}=\id_{U\otimes V}
+\]
+for all objects $U,V$ of $\mathcal{C}$.
+\end{definition}
+
+\begin{remark}
+The naturality of the braiding $c$ means that if $V,W$ are objects
+of $\mathcal{C}$ then there exists a morphism $c_{V,W}:V\otimes W\to W\otimes V$
+such that the diagram 
+\[
+\xymatrix{V\otimes W \ar[d]_{f\otimes g} \ar[r]^{c_{V,W}} & W\otimes V \ar[d]^{g\otimes f} \\ V'\otimes W' \ar[r]_{c_{V',W'}} & W'\otimes V' }
+\]
+is commutative for all pair of morphisms $f:V\to V'$ y $g:W\to W'$.
+\end{remark}
+
+\begin{proposition}
+Let $U$, $V$ and $W$ be objects of a braided monoidal category $\mathcal{C}$.
+Then 
+\begin{align*}
+(c_{V,W}\otimes\textrm{id}_{U})(\textrm{id}_{V}&\otimes c_{U,W})(c_{U,V}\otimes\textrm{id}_{W})\\
+&=(\textrm{id}_{W}\otimes c_{U,V})(c_{U,W}\otimes\textrm{id}_{V})(\textrm{id}_{U}\otimes c_{V,W}).
+\end{align*}
+\end{proposition}
+
+\begin{proof}
+It follows from Equations \eqref{eq:braided1}--\eqref{eq:braided2} and the
+diagram
+\[
+\xymatrix{(U\otimes V)\otimes W \ar[r]^{c_{U\otimes V,W}}\ar[d]^{c_{U,V}\otimes\text{id}_W} & W\otimes (U\otimes V)\ar[d]^{\text{id}_W\otimes c_{U,V}} \\ (V\otimes U)\otimes W\ar[r]_{c_{V\otimes U,W}} & W\otimes (V\otimes U)}
+\]
+obtained from the naturality of the braiding with
+$f=c_{U,V}\otimes\id_W$ and $g=\id_W$.
+\end{proof}
+
+%\begin{example}
+%Let $H$ be a quasitriangular Hopf algebra. The category of left $H$-modules is
+%a braided monoidal category.
+%\end{example}
+\begin{example}
+The category $_H^H\mathcal{YD}$ of Yetter-Drinfeld modules is a braided
+monoidal category.
+\end{example}
+
+\begin{proposition}
+Let $H$ be a Hopf algebra. Then $H$ is quasitriangular if and only if
+$\lmod{H}$ is a braided monoidal category.
+\end{proposition}
+
+\begin{proof}
+We first prove the implication $\implies$. Assume that $H$ is quasitriangular
+with $R=\sum a_{i}\otimes b_{i}$. Let $V$ and $W$ be two left $H$-modules, and
+define
+\begin{align*}
+c_{V,W}:V\otimes W & \to W\otimes V\\
+v\otimes w & \mapsto\sum(b_{i}\cdot w)\otimes(a_{i}\cdot v)
+\end{align*}
+Since $R$ is invertible, we assume that $R^{-1}=\sum a'_{i}\otimes b'_{i}$. 
+Then $c_{V,W}$ is invertible with inverse
+\begin{align*}
+c_{V,W}^{-1}:W\otimes V & \to V\otimes W\\
+w\otimes v & \mapsto\sum(a'_{i}\cdot v)\otimes(b'_{i}\cdot w)
+\end{align*}
+For example, we check that $c_{V,W}^{-1}\circ c_{V,W}=\id_{V\otimes W}$:
+\begin{align*}
+(c_{V,W}^{-1}\circ c_{V,W})(v\otimes w) & =\sum c_{V,W}^{-1}((b_{i}\cdot w)\otimes(a_{i}\cdot v))\\
+ & =\sum(a'_{j}\cdot a_{i}\cdot v)\otimes(b'_{j}\cdot b_{i}\cdot w)\\
+ & =(1\cdot v)\otimes(1\cdot w)\\
+ & =v\otimes w.
+\end{align*}
+Similarly we prove that $c_{V,W}\circ c_{V,W}^{-1}=\id_{W\otimes V}$.
+By Lemma \ref{paragraph:QT_braiding}, the map $c_{V,W}$ is a morphism of left $H$-modules. 
+%Now we prove that $c_{V,W}$ is a morphism of left $H$-modules:
+%\begin{align*}
+%c_{V,W}(h\to(v\otimes w)) & =c_{V,W}(h_{1}\to v\otimes h_{2}\to w)\\
+% & =\sum b_{i}\to h_{2}\to w\otimes a_{i}\to h_{1}\to v\\
+% & =\sum b_{i}h_{2}\to w\otimes a_{i}h_{1}\to v\\
+% & =\sum h_{1}b_{i}\to w\otimes h_{2}a_{i}\to v\qquad\mathrm{(by \ref{QT:1})}\\
+% & =\sum h_{1}\to(b_{i}\to w)\otimes h_{2}\to(a_{i}\to v)\\
+% & =h\to\sum(b_{i}\to w)\otimes(a_{i}\to v)\\
+% & =h\to c_{V,W}(v\otimes w).
+%\end{align*}
+We need to to prove that $c_{V,W}$ is a braiding. First we prove
+that $c$ is natural, i.e., 
+\[
+(g\otimes f)c_{V,W}=c_{V',W'}(f\otimes g)
+\]
+holds for all $f:V\to V'$ and $g:W\to W'$ any two left $H$-module morphisms.
+We compute: 
+\begin{align*}
+(g\otimes f)c_{V,W}(v\otimes w) & =(g\otimes f)\left(\sum b_{i}\cdot w\otimes a_{i}\cdot v\right)\\
+ & =\sum g(b_{i}\cdot w)\otimes f(a_{i}\cdot v)\\
+ & =\sum b_{i}\cdot g(w)\otimes a_{i}\cdot f(v)
+\end{align*}
+and on the other hand,
+\begin{align*}
+c_{V',W'}(f\otimes g)(v\otimes w) & =c_{V',W'}(f(v)\otimes g(w))\\
+ & =\sum b_{i}\cdot g(w)\otimes a_{i}\cdot f(v).
+\end{align*}
+To prove Equations \eqref{eq:braided1} and \eqref{eq:braided2} we refer to
+Exercise \eqref{exercise:QT_hexagons}.
+%Now we prove that \eqref{eq:braided1} holds: 
+%\begin{align*}
+%c_{U,V\otimes W}(u\otimes v\otimes w) & =\sum b_{i}\to(v\otimes w)\otimes a_{i}\to u\\
+% & =\sum b_{i,1}\to v\otimes b_{i,2}\to w\otimes a_{i}\to u\\
+% & =\sum b_{j}\to v\otimes b_{i}\to w\otimes a_{i}a_{j}\to u\qquad\mathrm{(by \ref{QT:2})}\\
+% & =\sum b_{j}\to v\otimes b_{i}\to w\otimes a_{i}\to(a_{j}\to u)
+%\end{align*}
+%and 
+%\begin{align*}
+%(\id_{V}\otimes c_{U,W})(c_{U,V}\otimes\id_{W}) & (u\otimes v\otimes w)\\
+%= & \sum(\id_{V}\otimes c_{U,W})(b_{j}\to v\otimes a_{j}\to u\otimes w)\\
+%= & \sum(b_{j}\to v)\otimes(b_{i}\to w)\otimes(a_{i}\to(a_{j}\to u)).
+%\end{align*}
+%Similarly one proves that $c_{U\otimes V,W}=(c_{U,P}\otimes\id_{V})(\id_{U}\otimes c_{V,W})$.
+
+Now we prove the implication $\Longleftarrow$. So assume that $\lmod{H}$ is
+braided and let $c$ be the braiding. Recall that $H$ is a left $H$-module with
+$h\cdot k=hk$ for all $h,k\in H$.  Let  
+\[
+R=\tau_{H,H}(c_{H,H}(1\otimes1))=\sum a_{i}\otimes b_{i}.
+\]
+Since $C_{H,H}$ is invertible, $R$ is invertible. 
+
+Let $U,V$ be two left $H$-modules and let $v\in V$ and $w\in W$. We consider
+the maps $f_v:H\to V$, defined by $f_v(h)=h\cdot v$, and $f_w:H\to W$, defined
+by $f_w(h)=h\cdot w$. By the naturality of $c$ we obtain:
+\begin{equation}
+\label{eq:QT_auxiliar}
+c_{V,W}(v\otimes w)=\sum b_{i}\cdot w\otimes a_{i}\cdot v.
+\end{equation}
+In fact, 
+\begin{align*} 
+c_{V,W}(v\otimes w) & =c_{V,W}(f_v\otimes f_w)(1\otimes1)\\
+ & =(f_w\otimes f_v)c_{H,H}(1\otimes1)\\
+ & =(f_w\otimes f_v)\tau_{H,H}(R)\\
+ & =\sum b_{i}\cdot w\otimes a_{i}\cdot v.
+\end{align*}
+Since $c_{V,W}$ is a morphism of left $H$-modules, 
+\[
+c_{H,H}(h_1\otimes h_2)=c_{H,H}(h\cdot(1\otimes1))=h\cdot c_{H,H}(1\otimes1)=\Delta(h)c_{H,H}(1\otimes1).
+\]
+Therefore, using \eqref{eq:QT_auxiliar} we obtain 
+\begin{align*}
+\Delta^{\mathrm{cop}}(h)R &= \tau_{H,H}(\Delta(h)c_{H,H}(1\otimes1))\\
+&=\tau_{H,H}(c_{H,H}(h_1\otimes h_2))=\sum a_ih_1\otimes b_ih_2=R\Delta(h)
+\end{align*}
+for all $h\in H$. 
+
+Now using \eqref{eq:QT_auxiliar} and the equation $c_{U,V\otimes
+W}=(\id_{V}\otimes c_{U,W})(c_{U,V}\otimes\id_{W})$ we will
+obtain $(\id\otimes\Delta)(R)=R_{13}R_{12}$. First we compute:
+\begin{align*}
+c_{H,H\otimes H}(1\otimes1\otimes1) & =(\id_{H}\otimes c_{H,H})(c_{H,H}\otimes\id_{H})(1\otimes1\otimes1)\\
+ & =(\id_{H}\otimes c_{H,H})(c_{H,H}(1\otimes1)\otimes1)\\
+ & =(\id_{H}\otimes c_{H,H})(\tau(R)\otimes1)\\
+ & =\sum(\id_{H}\otimes c_{H,H})(b_{i}\otimes a_{i}\otimes1)\\
+ & =\sum b_{i}\otimes c_{H,H}(a_{i}\otimes1)\\
+ & =\sum b_{i}\otimes b_{j}\otimes a_{j}a_{i}.
+\end{align*}
+Using \eqref{eq:QT_auxiliar} with $V=H$ and $W=H\otimes H$ one obtains:
+\[
+c_{H,H\otimes H}(1\otimes1\otimes1)=\sum b_{i,1}\otimes b_{i,2}\otimes a_{i}
+\]
+and hence $(\id\otimes\Delta)(R)=R_{13}R_{12}$.  Similarly one proves
+that $(\Delta\otimes\id)(R)=R_{12}R_{23}$. This completes the proof. 
+\end{proof}
+
+\begin{exercise}\label{exercise:triangular}
+Prove that a Hopf algebra $H$ is triangular if and only if $\lmod{H}$ is
+symmetric. 
+\end{exercise}
+
+\section{Algebras in categories}
+
+\begin{definition}
+\index{algebras in monoidal categories}
+Let $\mathcal{C}$ be a monoidal category. An \underline{algebra} in
+$\mathcal{C}$ is a triple $(A,m,u)$, where $A$ is an object of
+$\mathcal{C}$, $m\in\hom(A\otimes A,A)$ and $u\in\hom(\I,A)$ such that 
+\begin{gather*}
+m(\id\otimes m)=m(m\otimes\id),\\
+m(\id\otimes u)=\id=m(u\otimes\id).
+\end{gather*}
+Let $A$ and $B$ be algebras in $\mathcal{C}$ and $f\in\hom(A,B)$.
+Then $f$ is a \underline{morphism} (of algebras in $\mathcal{C}$)
+if $m_{B}(f\otimes f)=fm_{A}$ and $fu_{A}=u_{B}$. This allows
+us to define the category $\operatorname{Alg}(\mathcal{C})$
+of algebas in $\mathcal{C}$. 
+\end{definition}
+
+\begin{example}
+Let $\mathcal{C}=\mathrm{Vect}(\mathbb{K})$ be the category of
+$\mathbb{K}$-vector spaces. An algebra $A$ in $\mathcal{C}$ is an algebra in
+the usual sense.
+\end{example}
+
+\begin{example}
+\index{module-algebra}
+Let $\mathcal{C}=\lmod{H}$ be the category of left $H$-modules.  An algebra $A$
+en $\mathcal{C}$ is an object of $\mathcal{C}$ such that $(a_{1}\to b)(a_{2}\to
+b')=a\to bb'$ and $a\to1=\varepsilon(a)1$ for all $a,b\in A$. Hence an algebra
+in $\lmod{H}$ is a left $H$-module-algebra.
+\end{example}
+
+\begin{example}
+\index{comodule-algebra}
+Let $\mathcal{C=}\lcomod{H}$ be the category of left $H$-comodules.  An algebra
+$A$ in $\mathcal{C}$ is an object of $\mathcal{C}$ such that
+$\delta(ab)=a_{-1}b{}_{-1}\otimes a_{0}b{}_{0}$ for all $a,b\in A$ and
+$\delta(1)=1_{A}\otimes1_{H}$.  Hence an algebra in $\lcomod{H}$ is a left
+$H$-comodule-algebra.
+\end{example}
+
+%\begin{exercise}
+%Prove that 
+%This is equivalent to ask for
+%$\delta$ to be a morphism of algebras. 
+%\end{exercise}
+
+\begin{example}
+\index{tensor product!of algebras in braided categories}
+Let $(\mathcal{C},c)$ be a braided category and let $A$ and $B$ be two algebras
+in $\mathcal{C}$. Then $A\otimes B$ is an algebra in $\mathcal{C}$ with
+multiplication 
+\[
+m_{A\otimes B}=(m_A\otimes m_B)(\id_A\otimes c_{B,A}\otimes \id_B).
+\]
+\end{example}
+
+\section{Coalgebras in categories}
+
+\begin{definition}
+\index{coalgebras in monoidal categories}
+Let $\mathcal{C}$ be a monoidal category. A \underline{coalgebra}
+$C$ in $\mathcal{C}$ is a triple $(C,\Delta,\varepsilon)$, where
+$C$ is an object of $\mathcal{C}$, $\Delta\in\hom(C,C\otimes C)$
+and $\varepsilon\in\hom(C,\mathbb{I})$ , and the following propositionerties
+are satisfied: 
+\begin{gather*}
+(\Delta\otimes\id)\Delta=(\id\otimes\Delta)\Delta,\\
+(\id\otimes\varepsilon)\Delta=(\varepsilon\otimes\id)\Delta=\id.
+\end{gather*}
+Let $C$ and $D$ be two coalgebras in $\mathcal{C}$ and $f\in\hom(C,D)$.
+Then $f$ is a \underline{morphism} (of coalgebras in $\mathcal{C}$)
+if $\Delta_{D}f=(f\otimes f)\Delta_{C}$ and $\varepsilon_{D}f=\varepsilon_{C}$.
+This allows us to define the category $\mathrm{Coalg}(\mathcal{C})$
+of coalgebras in $\mathcal{C}$.
+\end{definition}
+
+\begin{example}
+Let $\mathcal{C}=\mathrm{Vect}(\mathbb{K})$ be the category of $\mathbb{K}$-vector
+spaces. A coalgebra $C$ in $\mathcal{C}$ is a coalgebra in the usual sense.
+\end{example}
+
+\begin{example}
+\index{module-coalgebra}
+A coalgebra $C$ in $\lmod{H}$ is an object of $\mathcal{C}$ such that 
+\[
+(h\to c)_{1}\otimes(h\to c)_{2}=h_{1}\to c_{1}\otimes h_{2}\to c_{2}
+\]
+and $\varepsilon(h\to c)=\varepsilon(h)\varepsilon(c)$ for all $h\in H$ and
+$c\in C$. Hence a coalgebra in $\lmod{H}$ is a left $H$-module-coalgebra.
+\end{example}
+
+%\begin{exercise}
+%This is equivalent to ask for the action $\to$ to be a morphism of
+%coalgebras.
+%\end{exercise}
+
+\begin{example}
+\index{comodule-coalgebra}
+A coalgebra $C$ in $\lcomod{H}$ is an object of $\mathcal{C}$
+such that 
+\[
+c_{1,-1}c_{2,-1}\otimes c_{1,0}\otimes c_{2,0}=c_{-1}\otimes c_{0,1}\otimes c_{0,2}
+\]
+and $c_{-1}\varepsilon_{C}(c_{0})=\varepsilon_{C}(c)1$ for all $c\in C$. Hence
+a coalgebra in the category $\lcomod{H}$ is a left $H$-comodule-coalgebra.
+\end{example}
+
+\begin{example}
+\index{tensor product!of coalgebras in braided categories}
+Let $(\mathcal{C},c)$ be a braided category and let $C$ and $D$ be two
+coalgebras in $\mathcal{C}$. Then $C\otimes D$ is an coalgebra in $\mathcal{C}$
+with comultiplication 
+\[
+\Delta_{C\otimes D}=(\id_C\otimes c_{C,D}\otimes \id_D)(\Delta_C\otimes\Delta_D).
+\]
+\end{example}
+
+\section{Bialgebras and Hopf algebras in categories}
+
+\begin{definition}
+\index{bialgebras in braided categories}
+Let $\mathcal{C}$ be a braided monoidal category with braiding $c$.
+A bialgebra in $\mathcal{C}$ is a tuple \textbf{$(B,m,\eta,\Delta,\varepsilon)$},
+where $(B,m,\eta)$ is an algebra in $\mathcal{C}$, $(B,\Delta,\varepsilon)$
+is a coalgebra in $\mathcal{C}$ and such that $\Delta\in\hom(B,B\otimes B)$
+and $\varepsilon\in\hom(B,\mathbb{I})$ are morphism of algebras.
+Here $B\otimes B$ is the algebra in $\mathcal{C}$ given by the product
+\[
+(m_{B}\otimes m_{B})(\id\otimes c_{B,B}\otimes\id).
+\]
+\end{definition}
+
+\begin{exercise}
+Let $H$ be a quasitriangular Hopf algebra with $R=\sum a_{i}\otimes b_{i}$.
+Then $\lmod{H}$ is a braided monoidal category with braiding
+\[
+c_{V,W}(v\otimes w)=\sum_{i}b_{i}\cdot w\otimes a_{i}\cdot v.
+\]
+Prove that $H$ is a bialgebra in $\mathcal{C}$ if $H$ is an algebra
+and a coalgebra in $\lmod{H}$ and 
+\[
+(hh')_{1}\otimes(hh')_{2}=\sum_{i}h_{1}(b_{i}\cdot h'_{1})\otimes(a_{i}\cdot h_{2})h'_{2}
+\]
+for all $h,h'\in H$.
+\end{exercise}
+

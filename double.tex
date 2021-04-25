@@ -1,0 +1,241 @@
+\section{The Drinfeld double}
+
+Now we will construct the Drinfeld double of a finite-dimensional Hopf algebra.
+We first need two very well known actions.
+
+\begin{exercise}
+Let $C$ be a coalgebra. There exists a natural left action of $C^*$ on $C$
+given by $f\rightharpoonup c=\langle f|c_2\rangle c_1$ for all $f\in C^*$ and
+$c\in C$. Prove that this action is the transpose of the right
+multiplication of $C^*$ on itself, i.e., 
+\[
+\langle g|f\rightharpoonup c\rangle=\langle f|c_2\rangle\langle g|c_1\rangle=\langle gf|c\rangle
+\]
+for all $f,g\in C^*$ and $c\in C$. 
+Similarly, there is also a natural right action of $C^*$ on $C$ given by
+$c \leftharpoonup f=\langle f|c_1\rangle c_2$.  As before, this action is the
+transpose of the left multiplication of $C^*$ on itself: 
+\[
+\langle g|c\leftharpoonup f\rangle=\langle fg|c\rangle
+\] 
+for all $f,g\in C^*$ and $c\in C$.
+\end{exercise}
+
+\begin{exercise}
+Let $A$ be an algebra. Then we define a left action of $A$ on $A^*$ which is
+the transpose of the right multiplication on $A$: $\langle a\rightharpoonup
+f|x\rangle=\langle f|xa\rangle$ for all $f\in A^*$ and $a,x\in A$. 
+%Since $\dim A<\infty$, we obtain $a\rightharpoonup f=\langle f_2|a\rangle f_1$. 
+Similarly, one can define a right action of $A$ on $A^*$ by $\langle
+f\leftharpoonup a|x\rangle = \langle f|ax\rangle$.
+%and, as before, $f\leftharpoonup a=\langle f|a\rangle f$.
+\end{exercise}
+
+Let $H$ be a Hopf algebra with bijective antipode. The \underline{left
+coadjoint action} of $H$ on $H^*$ is the action 
+\[
+h\triangleright f=h_1\rightharpoonup f\leftharpoonup S^{-1}h_2=f(S^{-1}h_2?h_1)
+\]
+for all $h\in H$, $f\in H^*$. Notice that $\langle h\triangleright
+f|x\rangle=\langle f|S^{-1}h_2xh_1\rangle$. Similarly, one can define the
+\underline{right coadjoint action} of $H$ on $H^*$ as 
+\[
+f\triangleleft h=S^{-1}h_1\rightharpoonup f\leftharpoonup h_2=f(h_2?S^{-1}h_1)
+\]
+for al $f\in H^*$, $h\in H$. As before, $\langle f\triangleleft h|x\rangle=\langle f|h_2xS^{-1}h_1\rangle$.
+
+\begin{exercise}
+Prove that the left coadjoint action of $H$ on $H^*$ is the
+transpose of the left adjoint action of $H$ on itself. More
+precisely, prove that
+\[
+\langle h\triangleright f|x\rangle=\langle f|(\mathrm{ad}_l S^{-1}h)(x)\rangle\\
+\]
+for all $f\in H^*$ and $h,x \in H$,
+where $\mathrm{ad}_l(h)(x)=h_1x(Sh_2)$. 
+Similarly, prove that 
+\[
+\langle f\triangleleft h|x\rangle=\langle f|(\mathrm{ad}_r S^{-1}h)(x)\rangle
+\]
+where $\mathrm{ad}_r(h)(x)=(Sh_1)xh_2$
+\end{exercise}
+%For that purpose, recall that $(H^*)^\text{cop}$ and $H$ are in duality by
+%the evaluation, i.e., there exists a bilinear map
+%$(\cdot|\cdot):(H^*)^\text{cop}\to H$ such that: \begin{align*}
+%	(f|xy)&=(f_2|x)(f_1|y),\\ (fg|x)&=(f|x_1)(g|x_2),\\ (1|x)&=\varepsilon(x),\\
+%	(f|1)&=\varepsilon(f), \end{align*} for all $f,g\in H^*$ and $x,y\in H$.
+
+\begin{exercise}
+Assume that $H$ is finite-dimensional. We consider the left coadjoint action of
+$H$ on $H^*$ and the right coadjoint action of $H^*$ on $H$. Prove that 
+\begin{equation*}
+	\Delta^{\mathrm{cop}}(h\triangleright f)=(h_1\triangleright f_2)\otimes(h_2\triangleright f_1)\text{ and }
+	\Delta(h\triangleleft f)=(h_1\triangleleft f_2)\otimes(h_2\triangleleft f_1)
+\end{equation*}
+for all $h\in H$, $f\in H^*$.
+\end{exercise}
+
+\begin{theorem}
+\label{theorem:double}
+Let $H$ be a finite dimensional Hopf algebra. The \underline{Drinfeld double}
+$\mathcal{D}(H)$ of $H$ is a Hopf algebra. It can be realized on the vector
+space $(H^{*})^{\text{cop}}\otimes H$ with product
+\begin{align*}
+(f\otimes h)(f'\otimes h')&=ff'_{2}\otimes h_{2}h'\langle f'_{3}|h_{1}\rangle\langle f'_{1}|S^{-1}h_{3}\rangle\\
+&=f(h_1\rightharpoonup f'\leftharpoonup S^{-1}h_3)\otimes h_2h'\\
+&=f(h_1\triangleright f_2')\otimes (h_2\triangleleft f_1')h',
+\end{align*}
+unit $1\otimes1$, coproduct 
+\[
+\Delta(f\otimes h)=f_{2}\otimes h_{1}\otimes f_{1}\otimes h_{2},
+\]
+counit $\varepsilon(f\otimes h)=\varepsilon(f)\varepsilon(h)$ and
+antipode 
+\begin{align*}
+S(f\otimes h)&=(Sh_2\rightharpoonup Sf_1)\otimes (f_2\rightharpoonup Sh_1)\\
+&=(Sf_2\leftharpoonup h_1)\otimes(Sh_2\leftharpoonup Sf_1)
+\end{align*}
+for $f,f'\in H^*$ and $h,h'\in H$. 
+\end{theorem}
+
+\begin{exercise}
+Prove Theorem \ref{theorem:double}.
+\end{exercise}
+
+%\begin{proof}
+%We prove that $\Delta$ is morphism of algebras. 
+%We compute:
+%\begin{align*}
+%	\Delta\left( (f\otimes h)(f'\otimes h') \right) &= (f'_3|h_1)(f'_1|S^{-1}h_3)\Delta( ff'_2\otimes h_2h')\\
+%	&= (f'_3|h_1)(f'_1|S^{-1}h_3)(ff'_2)_2\otimes (h_2h')_1\otimes (ff'_2)_1\otimes (h_2h')_2\\
+%	&= (f'_4|h_1)(f'_1|S^{-1}h_4)f_2f'_3\otimes h_2h'_1\otimes f_1f'_2\otimes h_3h'_2.
+%\end{align*}
+%On the other hand,
+%\begin{align*}
+%	\Delta(f&\otimes h)\Delta(f'\otimes h') = (f_2\otimes h_1)(f'_2\otimes h'_1)\otimes (f_1\otimes h_2)(f'_1\otimes h'_2)\\
+%	&= (f'_5|h_1)(f'_{32}|S^{-1}h_{31})(f'_{31}|h_{32})(f'_1|S^{-1}h_5)f_2f'_4\otimes h_2h'_1\otimes f_1f'_2\otimes h_4h'_2\\
+%	&= (f'_5|h_1)(f'_{3}|S^{-1}(h_{31})h_{32})(f'_1|S^{-1}h_5)f_2f'_4\otimes h_2h'_1\otimes f_1f'_2\otimes h_4h'_2\\
+%	&= (f'_4|h_1)(f'_1|S^{-1}h_4)f_2f'_3\otimes h_2h'_1\otimes f_1f'_2\otimes h_3h'_2.
+%\end{align*}
+%The rest is left as an exercise.
+%\end{proof}
+
+\begin{exercise}
+Prove that  the product of $\mathcal{D}(H)$ is: 
+\[
+(f\otimes h)(f'\otimes h') = ff'(S^{-1}(h_{3})?h_{1})\otimes h_{2}h'
+\]
+where $f(?)$ means the map $x\mapsto f(x)$. 
+\end{exercise}
+
+%\begin{exercise}
+%Prove that  the product of $\mathcal{D}(H)$ is: 
+%\begin{align*}
+%(f\otimes h)(f'\otimes h') &= f(h_{1}\rightarrow f'\leftarrow S^{-1}h_{3})\otimes h_{2}h'\\
+%&=ff'_{2}\otimes(S^{-1}f'_{1}\to h\leftarrow f'_{3})h',
+%\end{align*}	
+%where 
+%$f\leftarrow h=f(h?)$,     
+%$h\rightarrow f=f(?h)$,        
+%$f\to h=f(h_{2})h_{1}$ and 
+%$h\leftarrow f=f(h_1)h_2$
+%for all $f\in H^*$ and $h\in H$. 
+%\end{exercise}
+
+\begin{exercise}
+Let $H$ be a finite-dimensional cocommutative Hopf algebra. Prove that
+$\mathcal{D}(H)$ is isomorphic (as an algebra) to the smash product on
+$H^{*}\otimes H$, see \cite[10.3.10]{MR1243637}.
+\end{exercise}
+
+\begin{lemma}
+Let $H$ be a finite-dimensional.
+Assume that $\{h_{i}\}$ is a basis of $H$ and $\{h^{i}\}$ is a basis
+of $H^{*}$ dual to $\{h_{i}\}$. Then 
+\begin{equation}
+	R=\sum_{i}(\varepsilon\otimes h_{i})\otimes(h^{i}\otimes1)
+\end{equation}
+does not depend on $\{h_i\}$ and $\{h^i\}$.
+\end{lemma}
+
+\begin{proof}
+Since $H$ is finite-dimensional, the linear map $\Phi:H\otimes
+H^{*}\to\mathrm{End}_{\mathbb{K}}(H)$ defined by $\Phi(h\otimes f)(x)=f(x)h$ is
+an isomorphism. We prove that $\Phi^{-1}(\id)=\sum h_{i}\otimes h^{i}$
+does not depend on the pair of dual basis $\{h_{i}\}$ and $\{h^{i}\}$:
+\[
+\Phi(\sum h_{i}\otimes h^{i})(x)=\sum\Phi(h_{i}\otimes h^{i})(x)=\sum h^{i}(x)h_{i}=x.
+\]
+Since $R=\varepsilon\otimes\Phi^{-1}(\id)\otimes1$, the claim
+follows. 
+\end{proof}
+
+\begin{theorem}
+\label{theorem:R_matrix}
+Let $H$ be a finite-dimensional Hopf algebra. Then $\mathcal{D}(H)$ is a
+quasitriangular Hopf algebra. More precisely, the quasitriangular structure is
+given by 
+\begin{equation}
+R=\sum_{i}(\varepsilon\otimes h_{i})\otimes(h^{i}\otimes1),\label{eq:R}
+\end{equation}
+where $\{h_{i}\}$ is a basis of $H$ and $\{h^{i}\}$ is a basis
+of $H^{*}$ dual to $\{h_{i}\}$. 
+\end{theorem}
+
+\begin{exercise}
+Prove Theorem \ref{theorem:R_matrix}.
+\end{exercise}
+
+\begin{corollary}
+Let $H$ be a finite-dimensional Hopf algebra. Then $H$ is a subHopf algebra of
+a quasitriangular Hopf algebra. 
+\end{corollary}
+
+\begin{proof}
+It follows from the fact that $H\simeq\varepsilon_{H}\otimes H$ is a subalgebra
+of $\mathcal{D}(H)$. 
+\end{proof}
+
+\begin{example}
+Let $G$ be a finite group, and let $H=\mathbb{K}[G]$ be the group algebra of
+$G$ with the usual Hopf algebra structure. Let $\{e_{g}\mid g\in G\}$ be the
+dual basis of the basis $\{g\mid g\in G\}$ of $H$. The dual algebra
+$\left(\mathbb{K}[G]^{\text{op}}\right)^{*}$ is the algebra
+$\mathrm{Fun}(G,\mathbb{K})$ with multiplication
+\[
+e_{g}e_{h}=\begin{cases}
+e_{g} & \text{if }g=h,\\
+0 & \text{otherwise,}
+\end{cases}
+\]
+for all $g,h\in G$ and unit $\sum_{g\in G}e_{g}=1$. 
+The comultiplication
+is 
+\[
+\Delta(e_{g})=\sum_{uv=g}e_{v}\otimes e_{u},
+\]
+the counit is 
+\[
+\varepsilon(e_{g})=\begin{cases}
+1 & \text{if }g=1,\\
+0 & \text{otherwise,}
+\end{cases}
+\]
+and the antipode is 
+$S(e_{g})=e_{g^{-1}}$
+for all $g\in G$.  Now we describe
+the Drinfeld double $\mathcal{D}(\mathbb{K}[G])$.  A basis of
+$\mathcal{D}(\mathbb{K}[G])$ is given by
+\[
+\{e_gh\mid (g,h)\in G\times G\}.
+\]
+The product of $\mathcal{D}(\mathbb{K}[G])$ is determined by 
+\[
+he_{g}=e_{h^{-1}gh}h.
+\]
+The $R$-matrix is
+\[
+R=\sum_{g\in G}g\otimes e_{g}.
+\]
+\end{example}
+
