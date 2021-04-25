@@ -2,7 +2,7 @@
 
 \begin{definition}
 \index{monoidal category}
-A \underline{monoidal category} is a tuple
+A \textbf{monoidal category} is a tuple
 $(\mathcal{C},\otimes,a,\mathbb{I},l,r)$, where $\mathcal{C}$ is a category,
 $\otimes:\mathcal{C}\times\mathcal{C}\to\mathcal{C}$ is a funtor, $\mathbb{I}$
 is an object of $\mathcal{C}$, $a_{U,V,W}:(U\otimes V)\otimes W\to
@@ -21,7 +21,7 @@ for all objects $U,W$ of $\mathcal{C}$.
 
 \begin{definition}
 \index{strict monoidal category}
-A monoidal category $\mathcal{C}$ is called \underline{strict} if the natural
+A monoidal category $\mathcal{C}$ is called \textbf{strict} if the natural
 isomorphism $a$, $l$ y $r$ are identities. 
 \end{definition}
 
@@ -66,7 +66,7 @@ $_H\mathcal{YD}^H$ of Yetter-Drinfeld modules is a monoidal category.
 
 \begin{definition}
 \index{braided monoidal category}
-A monoidal category $\mathcal{C}$ is \underline{braided} if there
+A monoidal category $\mathcal{C}$ is \textbf{braided} if there
 exists a natural isomorphism $c:\otimes\to\otimes^{\mathrm{op}}$
 such that
 \begin{align}
@@ -78,7 +78,7 @@ for all objects $U,V,W$ of $\mathcal{C}$.
 
 \begin{definition}
 \index{symmetric monoidal category}
-A braided monoidal category is \underline{symmetric} if $c$ satisfies
+A braided monoidal category is \textbf{symmetric} if $c$ satisfies
 \[
 c_{U,V}c_{V,U}=\id_{U\otimes V}
 \]
@@ -256,7 +256,7 @@ symmetric.
 
 \begin{definition}
 \index{algebras in monoidal categories}
-Let $\mathcal{C}$ be a monoidal category. An \underline{algebra} in
+Let $\mathcal{C}$ be a monoidal category. An \textbf{algebra} in
 $\mathcal{C}$ is a triple $(A,m,u)$, where $A$ is an object of
 $\mathcal{C}$, $m\in\hom(A\otimes A,A)$ and $u\in\hom(\I,A)$ such that 
 \begin{gather*}
@@ -264,7 +264,7 @@ m(\id\otimes m)=m(m\otimes\id),\\
 m(\id\otimes u)=\id=m(u\otimes\id).
 \end{gather*}
 Let $A$ and $B$ be algebras in $\mathcal{C}$ and $f\in\hom(A,B)$.
-Then $f$ is a \underline{morphism} (of algebras in $\mathcal{C}$)
+Then $f$ is a \textbf{morphism} (of algebras in $\mathcal{C}$)
 if $m_{B}(f\otimes f)=fm_{A}$ and $fu_{A}=u_{B}$. This allows
 us to define the category $\operatorname{Alg}(\mathcal{C})$
 of algebas in $\mathcal{C}$. 
@@ -313,7 +313,7 @@ m_{A\otimes B}=(m_A\otimes m_B)(\id_A\otimes c_{B,A}\otimes \id_B).
 
 \begin{definition}
 \index{coalgebras in monoidal categories}
-Let $\mathcal{C}$ be a monoidal category. A \underline{coalgebra}
+Let $\mathcal{C}$ be a monoidal category. A \textbf{coalgebra}
 $C$ in $\mathcal{C}$ is a triple $(C,\Delta,\varepsilon)$, where
 $C$ is an object of $\mathcal{C}$, $\Delta\in\hom(C,C\otimes C)$
 and $\varepsilon\in\hom(C,\mathbb{I})$ , and the following propositionerties
@@ -323,7 +323,7 @@ are satisfied:
 (\id\otimes\varepsilon)\Delta=(\varepsilon\otimes\id)\Delta=\id.
 \end{gather*}
 Let $C$ and $D$ be two coalgebras in $\mathcal{C}$ and $f\in\hom(C,D)$.
-Then $f$ is a \underline{morphism} (of coalgebras in $\mathcal{C}$)
+Then $f$ is a \textbf{morphism} (of coalgebras in $\mathcal{C}$)
 if $\Delta_{D}f=(f\otimes f)\Delta_{C}$ and $\varepsilon_{D}f=\varepsilon_{C}$.
 This allows us to define the category $\mathrm{Coalg}(\mathcal{C})$
 of coalgebras in $\mathcal{C}$.

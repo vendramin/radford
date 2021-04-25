@@ -2,13 +2,13 @@
 
 \begin{definition}
 \index{Yetter-Drinfeld module}
-Let $H$ be a Hopf algebra. A \underline{Yetter-Drifeld module} over $H$ is a
+Let $H$ be a Hopf algebra. A \textbf{Yetter-Drifeld module} over $H$ is a
 triple $(V,\rightarrow,\delta)$, where $(V,\rightarrow)$ is a left $H$-module,
 $(V,\delta)$ is a left $H$-comodule, and such that 
 \begin{equation}
 \delta(h\rightarrow v)=h_{1}v_{-1}Sh_{3}\otimes h_{2}\rightarrow v_{0}\label{eq:YD}
 \end{equation}
-for all $h\in H$, $v\in V$. A \underline{morphism} of Yetter-Drinfeld modules
+for all $h\in H$, $v\in V$. A \textbf{morphism} of Yetter-Drinfeld modules
 is a morphism of left $H$-modules and left $H$-comodules. The category of Yetter-Drinfeld
 modules will be denoted by $\ydH$.
 \end{definition}
@@ -115,7 +115,7 @@ This completes the proof.
 \begin{exercise}
 \label{exercise:YD_hexagons}
 Let $H$ be a Hopf algebra, and let $U$, $V$ and $W$
-be three objects of $_H^H\mathcal{YD}$. Prove that 
+be three objects of $\ydH$. Prove that 
 \begin{align}
 c_{U\otimes V,W} & =(c_{U,W}\otimes\id_{V})(\id_{U}\otimes c_{V,W}),\label{eq:(cx1)(1xc)}\\
 c_{U,V\otimes W} & =(\id_{V}\otimes c_{U,W})(c_{U,V}\otimes\id_{W}).\label{eq:(1xc)(cx1)}
@@ -147,11 +147,9 @@ be Yetter-Drinfeld modules over $H$. Then
 \end{align*}
 \end{theorem}
 
-\begin{proof}
-It follows from Exercise \eqref{exercise:YD_naturality} with
-$f=c_{U,V}\otimes\id_W$ and $g=\id_W$, and Exercise
-\eqref{exercise:YD_hexagons}.
-\end{proof}
+The proof follows from Exercise~\ref{exercise:YD_naturality} with
+$f=c_{U,V}\otimes\id_W$ and $g=\id_W$ and Exercise
+\ref{exercise:YD_hexagons}.
 
 \begin{exercise}
 Prove Theorem \ref{theorem:YD_braid_equation} without using Exercises
@@ -179,10 +177,13 @@ Prove Theorem \ref{theorem:YD_braid_equation} without using Exercises
 %(here we use that $f$ is morphism of $H$-comodules). Hence the claim
 %holds.
 
-\subsection{The category $_H\mathcal{YD}^H$}
+%\subsection{The category $_H\mathcal{YD}^H$}
 
 We will also work with the following variation of what a Yetter-Drinfeld module
-is: An object $V$ in the category $_{H}\mathcal{YD}^{H}$ is a triple
+is: An object $V$ in the category 
+$\prescript{}{H}{\mathcal{YD}^H}$
+$_{H}\mathcal{YD}^{H}$ 
+is a triple
 $(V,\rightarrow,\delta)$, where $(V,\rightarrow)$ is a left $H$-module,
 $(V,\delta)$ is a right $H$-comodule, such that
 \[
@@ -214,8 +215,8 @@ $(V,\rightarrow,\delta_R)$ is an object of $_{H}\mathcal{YD}^{H}$ and define
 \delta_L(v)=S(v_1)\otimes v_0
 \]
 for all $v\in V$.  Prove that
-$(V,\rightarrow,\delta_L)$ is an object of $_H^H\mathcal{YD}$. 
-Conversely, if $(V,\rightarrow,\delta_L)$ is an object of $_H^H\mathcal{YD}$,
+$(V,\rightarrow,\delta_L)$ is an object of $\ydH$. 
+Conversely, if $(V,\rightarrow,\delta_L)$ is an object of $\ydH$,
 define \[
 \delta_R(v)=v_0\otimes S^{-1}v_{-1}
 \]
