@@ -46,14 +46,13 @@ A \textbf{quasitriangular} Hopf algebra is a pair $(H,R)$, where
 $H$ is a Hopf algebra and $R=\sum_{i}a_{i}\otimes b_{i}\in H\otimes H$
 is an invertible elemmaent such that the following conditions are satisfied:
 \begin{align}
+\tau\Delta(h)R & =R\Delta(h),\label{QT:1}\\
 (\Delta\otimes\textrm{id})(R) & =R_{13}R_{23},\label{QT:2}\\
-(\textrm{id}\otimes\Delta)(R) & =R_{13}R_{12},\label{QT:3}\\
-\tau\Delta(h)R & =R\Delta(h)\label{QT:1}
+(\textrm{id}\otimes\Delta)(R) & =R_{13}R_{12}\label{QT:3}
 \end{align}
 for all $h\in H$.
 \end{definition}
 
-\begin{remark}
 Using Sweedler notation, Equations \eqref{QT:1}--\eqref{QT:3} can
 be written as:
 \begin{align*}
@@ -61,7 +60,6 @@ be written as:
 \sum a_{i,1}\otimes a_{i,2}\otimes b_{i} & =\sum a_{i}\otimes a_{j}\otimes b_{i}b_{j},\\
 \sum a_{i}\otimes b_{i,1}\otimes b_{i,2} & =\sum a_{i}a_{j}\otimes b_{j}\otimes b_{i}.
 \end{align*}
-\end{remark}
 
 \begin{example}
 \index{Hopf algebra!cocommutative}
@@ -144,9 +142,8 @@ is a quasitriangular Hopf algebra.
 
 Finally, \eqref{eq:qt_sxs} follows from \eqref{eq:qt_sx1} since
 \[
-(S\otimes S)(R)=(\textrm{id}\otimes S)(S\otimes\textrm{id})(R)=(\textrm{id}\otimes S)(R^{-1})=R.
+(S\otimes S)(R)=(\textrm{id}\otimes S)(S\otimes\textrm{id})(R)=(\textrm{id}\otimes S)(R^{-1})=R.\qedhere
 \]
-This completes the proof.
 \end{proof}
 
 \begin{proposition}
@@ -227,7 +224,7 @@ On the other hand,
 (\id_{W}\otimes R_{U,V})(R_{U,W}\otimes\id_{V}) & (\id_{U}\otimes R_{V,W})(u\otimes v\otimes w)\\
  & =\sum(b_{j}b_{i})\cdot w\otimes(b_{k}a_{i})\cdot v\otimes(a_{k}a_{j})\cdot u
 \end{align*}
-and hence the claim follows from propositionosition \ref{proposition:R-matrix}.\end{proof}
+and hence the claim follows from proposition \ref{proposition:R-matrix}.\end{proof}
 
 \begin{exercise}
 \label{exercise:QT_hexagons}
@@ -270,7 +267,7 @@ Then
 \[
 \sum S^2h_3S(b_ih_2)a_ih_1=\sum (S^2h_3)S(h_1b_i)h_2a_i.
 \]
-Using propositionerties of the antipode and the counit we obtain: 
+Using properties of the antipode and the counit we obtain: 
 \[
 \sum S^2h_3S(b_ih_2)a_ih_1=\sum S(h_2Sh_3)(Sb_i)a_ih_1= \sum (Sb_i)a_ih=uh.
 \]

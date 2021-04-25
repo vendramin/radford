@@ -10,9 +10,9 @@ the smash coproduct:
 \[
 \Delta(a\otimes h)=(a_{1}\otimes a_{2,-1}h_{1})\otimes(a_{2,0}\otimes h_{2})
 \]
-for all $a\in A$, $h\in H$. This is the so-called \underbar{Radford biproduct}.
+for all $a\in A$, $h\in H$. This is the \textbf{Radford biproduct}.
 
-\begin{theorem}
+\begin{theorem}[Radford]
 \label{theorem:radford}
 Let $H$ be Hopf algebra, and let $A$ be an algebra and a coalgebra such that
 $(A,\rightarrow)$ a left $H$-module-algebra and $(A,\delta)$ a left
@@ -28,7 +28,6 @@ A\text{ is a left \ensuremath{H}-module-coalgebra,}\label{eq:radford_2}\\
 for all $a,a'\in A$, $h\in H$.
 Then the vector space $A\otimes H$ is a bialgebra with the algebra structure
 given by the left smash product and the coalgebra is the left smash coproduct.
-
 Furthermore, if $A$ has an antipode $S_A$, then $A\otimes H$ is a Hopf algebra
 with antipode
 \[
@@ -86,9 +85,8 @@ Since $a_{-1}\otimes a_{0,-1}\otimes a_{0,0}=a_{-1,1}\otimes a_{-1,2}\otimes a_{
  & =a_{1}S_{A}(a_{2,0,0})\otimes a_{2,-1}h_{1}S_{H}(h_{2})S_{H}(a_{2,0,-1})\\
  & =a_{1}S_{A}(a_{2,0})\otimes a_{2,-1,1}S_{H}(a_{2,-1,2})\varepsilon(h)\\
  & =a_{1}S_{A}(a_{2})\otimes1\varepsilon(h)\\
- & =1\otimes1\varepsilon(a)\varepsilon(h).
+ & =1\otimes1\varepsilon(a)\varepsilon(h).\qedhere
  \end{align*}
-This completes the proof.
 \end{proof}
 
 \begin{exercise}
@@ -125,9 +123,9 @@ B\text{ a right \ensuremath{H}-module-coalgebra,}\\
 \varepsilon_{B}\text{ is a morphism of algebras,}\\
 \Delta(1_{B})=1_{B}\otimes1_{B},\\
 \Delta(bb')=b_{1}b'_{1,0}\otimes(b_{2}\leftarrow b'_{1,1})b'_{2},\\
-(b_{0}\leftarrow h_{1})\otimes b_{1}h_{2}=(b\leftarrow h_{2})_{0}\otimes h_{1}(b\leftarrow h_{2})_{1}.\end{gather*}
+(b_{0}\leftarrow h_{1})\otimes b_{1}h_{2}=(b\leftarrow h_{2})_{0}\otimes h_{1}(b\leftarrow h_{2})_{1}.
+\end{gather*}
 
-\begin{remark}
 A different and important bialgebra structure on $A\otimes H$ is
 the so-called \textbf{Majid product}. Let $A$ be an left $H$-module-algebra
 and $H$ be a right $A$-comodule-coalgebra. On the vector space $A\otimes H$
@@ -143,11 +141,12 @@ Then $A\otimes H$ is a bialgebra if and only if \begin{gather*}
 \delta(hh')=h_{1,0}h'_{0}\otimes h_{1,1}(h_{2}\rightarrow h'_{1}),\\
 h_{2,0}\otimes(h_{1}\rightarrow a)h_{2,1}=h_{1,0}\otimes h_{1,1}(h_{2}\rightarrow a).
 \end{gather*}
-\end{remark}
 
-\section{Radford bosonization}
 
-\begin{theorem}
+%\section{Radford bosonization}
+The following result is known as the Radford's bosonization. 
+
+\begin{theorem}[Radford]
 \label{theorem:bosonization}
 Let $H$ be a Hopf algebra with bijective antipode. There exists a bijective
 correspondence between
@@ -273,9 +272,12 @@ h\mapsto\varepsilon(r)h$, and $i:H\to R\otimes H$, defined by $h\mapsto
 Let $A$ and $H$ be two Hopf algebras such that there exist Hopf algebras
 morphisms $H\xrightarrow{i}A\xrightarrow{p}H$ such that $pi=\id_H$. Let
 $R=A^{\mathrm{co}H}$ and consider the map $\omega:A\to R$ defined by $a\mapsto
-a_1ip(Sa_2)$. Prove that the maps $\alpha:A\to R\otimes H$,
-$\alpha(a)=\omega(a_1)\otimes p(a_2)$ and $\beta:R\otimes H\to A$, $r\otimes
-h\mapsto ri(h)$, are Hopf algebra morphisms. Furthermore, prove that
-$\alpha\circ\beta=\id_{R\otimes H}$ and $\beta\circ\alpha=\id_A$. Conclude
-that $A\simeq R\otimes H$ as Hopf algebras.
+a_1ip(Sa_2)$. 
+\begin{enumerate}
+    \item Prove that the maps $\alpha:A\to R\otimes H$, $\alpha(a)=\omega(a_1)\otimes p(a_2)$, and 
+    $\beta:R\otimes H\to A$, $r\otimes h\mapsto ri(h)$     
+    are Hopf algebra homomorphisms. 
+    \item Prove that $\alpha\circ\beta=\id_{R\otimes H}$ and $\beta\circ\alpha=\id_A$ and 
+    conclude that $A\simeq R\otimes H$ as Hopf algebras.
+\end{enumerate}
 \end{exercise}

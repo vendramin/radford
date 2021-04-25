@@ -37,10 +37,10 @@ for all $h\in H$, $v\in V$.
 \begin{exercise}
 Let $G$ be a group, and $H$ be the group Hopf algebra of $G$. Assume that
 $(V,\rightarrow)$ is a left $H$-module, and $(V,\delta)$ is a left
-$H$-comodule. 
+$H$-comodule. Prove the following statements:
 \begin{enumerate}
-\item Prove that $V=\oplus_{g\in G}V_{g}$, where $V_{g}=\{v\in V\mid\delta(v)=g\otimes v\}$.  
-\item Prove that the triple $(V,\rightarrow,\delta)$ is a Yetter-Drinfeld
+\item $V=\oplus_{g\in G}V_{g}$, where $V_{g}=\{v\in V\mid\delta(v)=g\otimes v\}$.  
+\item The triple $(V,\rightarrow,\delta)$ is a Yetter-Drinfeld
 module if and only if $h\rightarrow V_{g}\subseteq V_{hgh^{-1}}$ for all
 $g,h\in H$.
 \end{enumerate}
@@ -107,9 +107,8 @@ On the other hand,
 &=(v_{-2}\rightarrow w)_{-1}v_{-1}\otimes (v_{-2}\rightarrow w)_0\otimes v_0\\
 &=v_{-2,1}w_{-1}S(v_{-2,3})v_{-1}\otimes(v_{-2,2}\rightarrow w_0)\otimes v_0\\
 &=v_{-4}w_{-1}S(v_{-2})v_{-1}\otimes (v_{-3}\rightarrow w_0)\otimes v_0\\
-&=v_{-2}w_{-1}\otimes(v_{-1}\rightarrow w_0)\otimes v_0.
+&=v_{-2}w_{-1}\otimes(v_{-1}\rightarrow w_0)\otimes v_0.\qedhere
 \end{align*}
-This completes the proof.
 \end{proof}
 
 \begin{exercise}
@@ -224,7 +223,9 @@ for all $v\in V$. Prove that
 $(V,\rightarrow,\delta_R)$ is an object of $_H\mathcal{YD}^H$.
 \end{exercise}
 
-\subsection{Yetter-Drinfeld modules and the Drinfeld double}
+%\subsection{Yetter-Drinfeld modules and the Drinfeld double}
+There is a deep connection between Yetter-Drinfeld modules and the Drinfeld double. To conclude this section we will prove 
+that there is an equivalence between $_H\mathcal{YD}^H$ and $_{\mathcal{D}(H)}\mathcal{M}$. 
 
 \begin{exercise}
 Let $H$ be a finite-dimensional Hopf algebra. Assume that $\{h_i\}$ is a basis

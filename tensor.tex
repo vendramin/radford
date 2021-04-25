@@ -1,4 +1,4 @@
-\section{Tensor categories}
+\section{Monoidal categories}
 
 \begin{definition}
 \index{monoidal category}
@@ -244,7 +244,7 @@ Using \eqref{eq:QT_auxiliar} with $V=H$ and $W=H\otimes H$ one obtains:
 c_{H,H\otimes H}(1\otimes1\otimes1)=\sum b_{i,1}\otimes b_{i,2}\otimes a_{i}
 \]
 and hence $(\id\otimes\Delta)(R)=R_{13}R_{12}$.  Similarly one proves
-that $(\Delta\otimes\id)(R)=R_{12}R_{23}$. This completes the proof. 
+that $(\Delta\otimes\id)(R)=R_{12}R_{23}$. 
 \end{proof}
 
 \begin{exercise}\label{exercise:triangular}
@@ -252,7 +252,8 @@ Prove that a Hopf algebra $H$ is triangular if and only if $\lmod{H}$ is
 symmetric. 
 \end{exercise}
 
-\section{Algebras in categories}
+%\section{Algebras in categories}
+Now there is a natural way of defining an algebra in a monoidal category. 
 
 \begin{definition}
 \index{algebras in monoidal categories}
@@ -267,7 +268,7 @@ Let $A$ and $B$ be algebras in $\mathcal{C}$ and $f\in\hom(A,B)$.
 Then $f$ is a \textbf{morphism} (of algebras in $\mathcal{C}$)
 if $m_{B}(f\otimes f)=fm_{A}$ and $fu_{A}=u_{B}$. This allows
 us to define the category $\operatorname{Alg}(\mathcal{C})$
-of algebas in $\mathcal{C}$. 
+of algebras in $\mathcal{C}$. 
 \end{definition}
 
 \begin{example}
@@ -309,7 +310,8 @@ m_{A\otimes B}=(m_A\otimes m_B)(\id_A\otimes c_{B,A}\otimes \id_B).
 \]
 \end{example}
 
-\section{Coalgebras in categories}
+%\section{Coalgebras in categories}
+Similarly ones defines coalgebras in categories.
 
 \begin{definition}
 \index{coalgebras in monoidal categories}
@@ -370,10 +372,12 @@ with comultiplication
 \]
 \end{example}
 
-\section{Bialgebras and Hopf algebras in categories}
+%\section{Bialgebras and Hopf algebras in categories}
+Now it is possible to define bialgebras and Hopf algebras in braided monoidal categories. 
+%\section{Bialgebras and Hopf algebras in categories}
 
 \begin{definition}
-\index{bialgebras in braided categories}
+\index{Bialgebra!in a braided categories}
 Let $\mathcal{C}$ be a braided monoidal category with braiding $c$.
 A bialgebra in $\mathcal{C}$ is a tuple \textbf{$(B,m,\eta,\Delta,\varepsilon)$},
 where $(B,m,\eta)$ is an algebra in $\mathcal{C}$, $(B,\Delta,\varepsilon)$
