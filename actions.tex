@@ -5,18 +5,19 @@
 \begin{definition}
 \label{def:module_algebra}
 \index{module-algebra}
-Let $H$ be a Hopf algebra. A left \underline{$H$-module-algebra} is an algebra
+Let $H$ be a Hopf algebra. A left \textbf{$H$-module-algebra} is an algebra
 $A$ with a left $H$-module structure such that
-$h\rightarrow(ab)=(h_{1}\rightarrow a)(h_{2}\rightarrow b)$ and
-$h\rightarrow1=\varepsilon(h)1$ for all $h\in H$ and $a,b\in A$. 
+\begin{align*}
+&h\rightarrow(ab)=(h_{1}\rightarrow a)(h_{2}\rightarrow b),\\
+&h\rightarrow1=\varepsilon(h)1
+\end{align*}
+for all $h\in H$ and $a,b\in A$. 
 \end{definition}
 
-\begin{remark}
-It is possible to define \underline{right} $H$-module-algebras: it is an
+It is possible to define \textbf{right} $H$-module-algebras: it is an
 algebra with a right $H$-module structure such that $(ab)\leftarrow
 h=(a\leftarrow h_{1})(b\leftarrow h_{2})$ and $1\cdot h=\varepsilon(h)1$ for
 all $h\in H$ and $a,b\in A$. 
-\end{remark}
 
 \begin{exercise}
 Let $H$ be a Hopf algebra.  Prove that $H^*$ is an left $H$-module-algebra
@@ -33,8 +34,8 @@ Let $H$ be a Hopf algebra. Define
 a\rightarrow x=a_{1}xS(a_{2})\label{eq:left_adjoint_action}
 \end{equation}
 for all $a,x\in H$. Prove that $(H,\rightarrow)$ is a left $H$-module-algebra.
-The representation \ref{eq:left_adjoint_action} is called the \underline{left
-adjoint representation} of $H$. Similarly, prove that the \underline{right
+The representation \ref{eq:left_adjoint_action} is called the \textbf{left
+adjoint representation} of $H$. Similarly, prove that the \textbf{right
 adjoint action}
 \begin{equation}
 x\leftarrow a=S(a_{1})xa_{2}\label{eq:right_adjoint_action}
@@ -59,7 +60,7 @@ There exists an algebra structure on $A\otimes H$ given by
 \[
 (a\otimes h)(b\otimes g)=a(h_{1}\rightarrow b)\otimes h_{2}g
 \]
-and unit $1\otimes1$. This algebra is called the \underline{left smash product}
+and unit $1\otimes1$. This algebra is called the \textbf{left smash product}
 of $A$ and $H$.  Observe that the maps $A\to A\otimes H$, $a\mapsto a\otimes1$,
 and $H\to A\otimes H$, $h\mapsto 1\otimes h$ are algebra embedings.
 \end{exercise}
@@ -71,7 +72,7 @@ Prove that there exists an algebra structure on $H\otimes A$ given by
 \[
 (h\otimes a)(g\otimes b)=hg_{1}\otimes(a\leftarrow g_{2})b
 \]
-and unit $1\otimes1$. This algebra is called the \underline{right
+and unit $1\otimes1$. This algebra is called the \textbf{right
 smash product} of $H$ and $A$. 
 \end{exercise}
 
@@ -80,7 +81,7 @@ smash product} of $H$ and $A$.
 \begin{definition}
 \label{def:module_coalgebra}
 \index{module-coalgebra}
-Let $H$ be a Hopf algebra. A left \underline{$H$-module-coalgebra}
+Let $H$ be a Hopf algebra. A left \textbf{$H$-module-coalgebra}
 is a coalgebra $C$ with a left $H$-module structure such that 
 \begin{align*}
 (h\rightarrow c)_{1}\otimes(h\rightarrow c)_{2} & =(h_{1}\rightarrow c_{1})(h_{2}\rightarrow c_{2}),\\
@@ -89,7 +90,7 @@ is a coalgebra $C$ with a left $H$-module structure such that
 for all $h\in H$ and $c\in C$. 
 \end{definition}
 
-A \underline{right} $H$-module-coalgebra is a coalgebra $C$ with a right
+A \textbf{right} $H$-module-coalgebra is a coalgebra $C$ with a right
 $H$-module structure such that 
 \begin{align*}
 (c\leftarrow h)_{1}\otimes(c\leftarrow h)_{2} & =(c_{1}\leftarrow h_{1})(c_{2}\leftarrow h_{2})\\
@@ -101,14 +102,14 @@ for all $h\in H$, $c\in C$.
 \index{coadjoint action}
 Let $H$ be a finite-dimensional Hopf algebra. Consider the actions
 $(a\rightharpoonup f)(b)=f(ba)$ and $(f\leftharpoonup a)(b)=f(ab)$
-for all $a,b\in H$, $f\in H^{*}$. The \underline{left coadjoint action}
+for all $a,b\in H$, $f\in H^{*}$. The \textbf{left coadjoint action}
 of $H$ on $H^{*}$ is 
 \[
 h\triangleright f=h_{1}\rightharpoonup f\leftharpoonup S^{-1}h_{2}=f(S^{-1}h_{2}?h_1),
 \]
 where $f(?)$ means the function $x\mapsto f(x)$. Prove that
 $(H^*)^\mathrm{cop}$ is a left $H$-module-coalgebra via the left coadjoint
-action. Similarly, the \underline{right coadjoint action} of $H$ on $H^{*}$ is 
+action. Similarly, the \textbf{right coadjoint action} of $H$ on $H^{*}$ is 
 \[
 f\triangleleft h=S^{-1}h_{1}\rightharpoonup f\leftharpoonup h_{2}=f(h_2?S^{-1}h_{1}).
 \]
@@ -127,21 +128,21 @@ y\triangleright e_{x}=y\rightharpoonup e_{x}\leftharpoonup y^{-1}=e_{xyx^{-1}}.
 
 \begin{exercise}
 \index{regular action}
-Let $H$ be a Hopf algebra and consider the \underline{left regular action} of $H$ on itself:
+Let $H$ be a Hopf algebra and consider the \textbf{left regular action} of $H$ on itself:
 $h\rightarrow g=gh$ for all
 $h,g\in H$. Prove that $H$ is a left $H$-module-coalgebra. 
 \end{exercise}
 
 \section{Coactions on algebras}
 
-Recall that a \underline{left $H$-comodule} is a pair $(V,\delta)$,
+Recall that a \textbf{left $H$-comodule} is a pair $(V,\delta)$,
 where $V$ is a vector space and $\delta:V\to H\otimes V$ is a linear
 map such that 
 \begin{align*}
 (\id\otimes\delta)\delta & =(\Delta\otimes\id)\delta,\\
 (\varepsilon\otimes\id)\delta & =\id.
 \end{align*}
-We write $\delta(v)=v_{-1}\otimes v_{0}$. Similarly, a \underline{right
+We write $\delta(v)=v_{-1}\otimes v_{0}$. Similarly, a \textbf{right
 $H$-comodule} is a pair $(V,\delta)$, where $\delta:V\to V\otimes H$
 is a linear map such that 
 \begin{align*}
@@ -153,7 +154,7 @@ In this case we write $\delta(v)=v_{0}\otimes v_{1}$.
 \begin{definition}
 \index{comodule-algebra}
 Let $H$ be a Hopf algebra. An algebra $A$ is a said to be a left
-\underline{$H$-comodule-algebra} if $(A,\delta)$ is a left $H$-comodule and the
+\textbf{$H$-comodule-algebra} if $(A,\delta)$ is a left $H$-comodule and the
 following properties are satisfied:
 \begin{align*}
 \delta(1_{A}) & =1_{H}\otimes1_{A},\\
@@ -167,7 +168,7 @@ for all $a,b\in A$. (Here we write $\delta(a)=a_{-1}\otimes a_{0}\in H\otimes A$
 \begin{definition}
 \index{comodule-coalgebra}
 Let $H$ be a Hopf algebra. A coalgebra $C$ is said to be a left
-\underline{$H$-comodule-coalgebra} if $(C,\delta)$ is a left $H$-comodule and
+\textbf{$H$-comodule-coalgebra} if $(C,\delta)$ is a left $H$-comodule and
 the following properties are satisfied:
 \begin{align*}
 c_{-1}\varepsilon(c_{0}) & =\varepsilon(c)1,\\
@@ -178,7 +179,7 @@ for all $c\in C$.
 
 \begin{exercise}
 \index{coadjoint coaction}
-Let $H$ be a Hopf algebra. Consider the \underline{left coadjoint coaction}
+Let $H$ be a Hopf algebra. Consider the \textbf{left coadjoint coaction}
 of $H$ on $H$: $\mathrm{coadj}(h)=h_{1}S(h_{3})\otimes h_{2}$ for $h\in H$. Prove that 
 $H$ is a left $H$-comodule-coalgebra via the left coadjoint coaction.
 \end{exercise}
@@ -200,13 +201,13 @@ coalgebra. Prove that $C\otimes H$ is a coalgebra with coproduct
 \]
 and counit $\varepsilon(c\times h)=\varepsilon_{C}(c)\varepsilon_{H}(h)$ for
 all $c\in C$, $h\in H$. This coalgebra structure on $C\otimes H$ is called the
-\underline{left smash coproduct}. Observe that the maps $C\otimes H\to C$,
+\textbf{left smash coproduct}. Observe that the maps $C\otimes H\to C$,
 $c\otimes h\mapsto c\varepsilon(h)$, and $C\otimes H\to H$, $c\otimes h\mapsto
 \varepsilon(c)h$, are coalgebra surjections.
 \end{exercise}
 
 \index{smash coproduct!right}
-Assume that $C$ is a right $H$-comodule coalgebra. The \underline{right}
+Assume that $C$ is a right $H$-comodule coalgebra. The \textbf{right}
 smash coproduct is then defined by 
 \[
 \Delta(h\otimes c)=h_{1}\otimes c_{1,0}\otimes h_{2}c_{1,1}\otimes c_{2}
